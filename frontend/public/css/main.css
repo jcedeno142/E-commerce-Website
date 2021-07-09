@@ -4,9 +4,10 @@ body, html {
     background-color:#b6b6b6;
     color: #777676;
     font-size: .9rem;
+    height: 100vh;
+    width: 100%;
 }
 .header{
     padding: 5px;
     background-color: #E6E6E6;
-    width: 100%;
 }
