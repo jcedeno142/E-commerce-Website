@@ -11,11 +11,14 @@ const ProductoSchema = Schema({
         required: true
     },
     description: {
-        type: String,
-        required: true
+        type: String
     },
     img: {
         type: String
+    },
+    status: {
+        type: Boolean,
+        required: true
     }
 });
 
