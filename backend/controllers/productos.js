@@ -20,6 +20,16 @@ const Productos = {
             console.log(error);
             return res.status(500).json({ok: false, error, message: 'Unexpected server error'});
         }
+    },
+    updateProduct: async (req, res) => {
+        const id = req.params.id;
+        const body = req.body;
+        try {
+            const update = await Producto.findByIdAndUpdate(id, body, {new: true});
+            return res.status(200).json({ok: true, update,  message: `Producto actualizado`});
+        } catch (error) {
+            
+        }
     }
 }
 
