@@ -10,6 +10,15 @@ const Productos = {
             return res.status(500).json({ok: false, error, message: 'Unexpected server error'});
         }
     },
+    getProduct: async (req,res) => {
+        const id = req.params.id;
+        try {
+            const producto = await Producto.findById(id);
+            return res.status(200).json({ok: true, producto})
+        } catch (error) {
+            return res.json({error, message: 'Unexpected server error'});
+        }
+    },
     insertProduct: async (req, res) => {
         const {productName, unitPrice, description, img} = req.body;
         const producto = new Producto(req.body)
