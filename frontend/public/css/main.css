@@ -1,13 +1,58 @@
-body, html {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color:#b6b6b6;
-    color: #777676;
-    font-size: .9rem;
-    height: 100vh;
-    width: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.header{
-    padding: 5px;
-    background-color: #E6E6E6;
+
+body, html {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #b6b6b6;
+  color: #777676;
+  font-size: .9rem;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+ 
+  padding-left: 8%;
+  padding-right: 8%;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-image: url('robin-worrall-FPt10LXK0cg-unsplash.jpg');
+  width: 100%;
+  height: 50vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+  padding-right: 8%;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 50px;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 30px;
+  cursor: pointer;
+}
+
+.main-footer {
+  clear: both;
+  position: relative;
+  height: 200px;
+  text-align: center;
+  margin-top: -200px;
+}
+
+.banner_01{
+  width: 200px;
+  cursor: pointer;
 }
