@@ -18,7 +18,8 @@ const ProductoSchema = Schema({
     },
     status: {
         type: Boolean,
-        required: true
+        required: true,
+        default: true
     }
 });
 
