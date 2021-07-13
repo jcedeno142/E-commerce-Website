@@ -1,4 +1,4 @@
-const Producto = require('../models/producto');
+const Producto = require('../models/Producto');
 
 const Productos = {
     getProducts: async (req, res) => {
@@ -37,7 +37,8 @@ const Productos = {
             const update = await Producto.findByIdAndUpdate(id, body, {new: true});
             return res.status(200).json({ok: true, update,  message: `Producto actualizado`});
         } catch (error) {
-            
+            console.log(error);
+            return res.status(500).json({ok: false, error, message: 'Unexpected server error'});
         }
     }
 }
