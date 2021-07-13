@@ -1,4 +1,5 @@
 const { check } = require('express-validator');
+const Producto = require('../models/Producto');
 
 exports.createProduct = [
     check('productName').trim().escape().not().isEmpty().withMessage('El nombre del producto es obligatorio')
@@ -8,4 +9,8 @@ exports.createProduct = [
     check('description').trim().escape().isLength({ max: 150 }).optional(),
     check('img').trim().escape().optional(),
     check('status', 'Estado incorrecto').isBoolean()
-]
+];
+
+exports.addCart = [
+    check('item').trim().escape().not().isEmpty().withMessage('El id del producto es requerido')
+];
