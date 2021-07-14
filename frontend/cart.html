@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/main.css">
+    <link rel="stylesheet" href="./public/css/header.css">
+    <link rel="stylesheet" href="./public/css/cart.css">
+    <title>E-Shop - DSIX</title>
+</head>
+
+<body>
+    <!-- header inner -->
+    <div id="container">
+        <div class="navbar">
+            <h4>Phones</h4>
+            <a href="index.html">
+            <img src="/frontend/public/css/images/smartphone.png" class="logo">
+        </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Users</a></li>
+                </ul>
+            </nav>
+            <img src="/frontend/public/css/images/shopping-cart.png" class="cart">
+        </div>
+    </div>
+    <!-- end header inner -->
+
+    <!--Shopping cart area-->
+
+    <main id="main">
+        <section class="section cart__area">
+            <div class="container">
+                <div class="responsive__cart-area">
+                    <form class="cart__form">
+                        <div class="cart__table table-responsive">
+                            <table width="100%" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>PRODUCT</th>
+                                        <th>NAME</th>
+                                        <th>UNIT PRICE</th>
+                                        <th>QUANTITY</th>
+                                        <th>TOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="product__thumbnail">
+                                            <a href="#">
+                                                <img src="./public/css/images/banner_01.png" alt="">
+                                            </a>
+                                        </td>
+                                        <td class="product__name">
+                                            <a href="#">Apple iPhone 11</a>
+                                            <br><br>
+                                            <small>White/6.25</small>
+                                        </td>
+                                        <td class="product__price">
+                                            <div class="price">
+                                                <span class="new__price">$250.99</span>
+                                            </div>
+                                        </td>
+                                        <td class="product__quantity">
+                                            <div class="input-counter">
+                                                <div>
+                                                    <a href="#" class="minus-btn">
+                                                        <img src="/frontend/public/css/images/minus.svg" height="87"
+                                                            width="25" />
+                                                    </a>
+
+                                                    <input type="text" min="1" value="1" max="10" class="counter-btn">
+                                                    <a href="#" class="plus-btn">
+                                                        <img src="/frontend/public/css/images/add.svg" height="87"
+                                                            width="25" />
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="product__subtotal">
+                                            <div class="price">
+                                                <span class="new__price">$250.99</span>
+                                            </div>
+                                            <a href="#" class="remove__cart-item">
+                                                <img src="/frontend/public/css/images/bin.svg" height="87" width="25" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="cart-btns">
+                            <div class="continue__shopping">
+                                <a href="/">Continue Shopping</a>
+                            </div>
+                            <div class="check__shipping">
+                                <input type="checkbox">
+                                <span>Shipping(+7$)</span>
+                            </div>
+                        </div>
+
+                        <div class="cart__totals">
+                            <h3>Cart Totals</h3>
+                            <ul>
+                                <li>
+                                    Subtotal
+                                    <span class="new__price">$250.99</span>
+                                </li>
+                                <li>
+                                    Shipping
+                                    <span>$0</span>
+                                </li>
+                                <li>
+                                    Total
+                                    <span class="new__price">$250.99</span>
+                                </li>
+                            </ul>
+                            <a href="">PROCEED TO CHECKOUT</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!--Shopping cart area-->
+
+
+
+        <!-- footer inner -->
+        <footer>
+            <p>Copyright &copy; 2021</p>
+            <h5>Front page - Proyecto final DSIX 2021 - 1LS231</h5>
+        </footer>
+        <!-- end footer inner -->
+</body>
+
+</html>

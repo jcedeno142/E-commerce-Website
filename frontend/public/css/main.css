@@ -16,44 +16,56 @@ body, html {
 
 .container {
  
-  padding-left: 8%;
-  padding-right: 8%;
+  padding-left: 5%;
+  padding-right: 5%;
   box-sizing: border-box;
 }
 
 .navbar {
-  background-image: url('robin-worrall-FPt10LXK0cg-unsplash.jpg');
+  background-image: url('./images/nana-dua-cFX4X_ubwzg-unsplash.jpg');
   width: 100%;
   height: 50vh;
   background-position: center;
   background-size: cover;
   display: flex;
   align-items: center;
-  padding-left: 8%;
-  padding-right: 8%;
+  padding-left: 5%;
+  padding-right: 5%;
   box-sizing: border-box;
 }
 
 .logo {
   width: 50px;
   cursor: pointer;
+  margin-bottom: 250px;
 }
 
-.menu-icon {
+.cart {
   width: 30px;
   cursor: pointer;
+  margin-bottom: 250px;
 }
 
-.main-footer {
+footer{
   clear: both;
   position: relative;
-  height: 200px;
+  width: 100%;
+  height: 10vh;
+  font-size: 20px;
+  color: white;
+  background-color: #7f8792;
   text-align: center;
-  margin-top: -200px;
+  margin-top: -50px;
+}
+
+footer p{
+  clear: both;
+  position: relative;
+  text-align: center;
 }
    
 .banner_01{
   width: 200px;
   cursor: pointer;
 }
-/* this is the mail css */
+/* this is the main css */
