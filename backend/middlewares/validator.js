@@ -1,5 +1,8 @@
 const { check } = require('express-validator');
-const Producto = require('../models/Producto');
+
+exports.auth = [
+    check('id_token', 'El token de usuario es requerido').not().isEmpty()
+]
 
 exports.createProduct = [
     check('productName').trim().escape().not().isEmpty().withMessage('El nombre del producto es obligatorio')
