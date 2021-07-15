@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/header.css">
+  <meta name="google-signin-client_id" content="813669874912-fvred2ts4ap6jfp57m3ooqba4e9vgkcb.apps.googleusercontent.com">
   <title>E-Shop - DSIX</title>
 </head>
 
@@ -19,7 +20,9 @@
       <nav>
         <ul>
           <li><a href="#">Products</a></li>
-          <li><a href="login.html">Login</a></li>
+          <!-- <li><a href="login.html">Login</a></li> -->
+          <li><div class="g-signin2" data-onsuccess="onSignIn"></div></li>
+          <li><a href="#" onclick="signOut();">Sign out</a></li>
         </ul>
       </nav>
       <a href="cart.html">
@@ -51,6 +54,7 @@
     <h5>Front page - Proyecto final DSIX 2021 - 1LS231</h5>
   </footer>
   <!-- end header inner -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="./js/login.js"></script>
 </body>
-
 </html>
