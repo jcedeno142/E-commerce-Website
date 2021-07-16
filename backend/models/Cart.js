@@ -12,4 +12,4 @@ CartSchema.method('toJSON', function() {
     return object;
 });
 
-module.exports = model('Cart', CartSchema)
+module.exports = model('Cart', CartSchema);

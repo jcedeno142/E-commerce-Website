@@ -10,5 +10,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./routes/index'));
 
 app.listen(port, () => {
-    console.log(`Servidor BACKEND en puerto: ${port}`)
+    console.log(`Servidor FRONTEND en puerto: ${port}`)
 });
