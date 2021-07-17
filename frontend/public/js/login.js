@@ -10,11 +10,15 @@
       App.htmlElements.google_logout.addEventListener("click", App.events.googleSignOut)
     },
     events: {
-      googleSignOut: () => {
-        let auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(() => {
+      googleSignOut: async () => {
+        try {
+          const auth2 = await gapi.auth2.getAuthInstance();
+          await auth2.signOut();
+          localStorage.removeItem('token');
           console.log('User signed out.');
-        });
+        } catch (error) {
+          throw new Error(`Google logout error: ${error}`);
+        }
       }
     }
   };
@@ -30,8 +34,9 @@ async function onSignIn(googleUser) {
       headers: {'Content-Type' : 'application/json'},
       body: JSON.stringify( data )
     })
-    const userData = await resp.json();
-    console.log(userData)
+    const user = await resp.json();
+    console.log(user);
+    localStorage.setItem('token', user.token);
   } catch (error) {
     throw new Error(`Google Authentication error: ${error}`);
   }
