@@ -1,29 +1,38 @@
-var url = 'http://localhost:3000/api/store/google';
+(() => {
+  const App = {
+    htmlElements: {
+      google_logout: document.getElementById('a-logout')
+    },
+    init: () => {
+      App.bindEvents();
+    },
+    bindEvents: () => {
+      App.htmlElements.google_logout.addEventListener("click", App.events.googleSignOut)
+    },
+    events: {
+      googleSignOut: () => {
+        let auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(() => {
+          console.log('User signed out.');
+        });
+      }
+    }
+  };
+  App.init();
+})();
 
-function onSignIn(googleUser) {
-
-    var profile = googleUser.getBasicProfile();
-    var id_token = googleUser.getAuthResponse().id_token;
-
-    // console.log('ID: ' + profile.getId());
-    // console.log('Name: ' + profile.getName());
-    // console.log('Image URL: ' + profile.getImageUrl());
-    // console.log('Email: ' + profile.getEmail()); 
-
+async function onSignIn(googleUser) {
+  try {
+    const id_token = await googleUser.getAuthResponse().id_token;
     const data = {id_token}
-    fetch(url, {
+    const resp = await fetch('http://localhost:3000/api/store/google', {
       method: 'POST',
       headers: {'Content-Type' : 'application/json'},
       body: JSON.stringify( data )
-    }). then(resp => resp.json()).then (data => console.log(data))
-    .catch(console.log);
-
-
-}
-
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
+    })
+    const userData = await resp.json();
+    console.log(userData)
+  } catch (error) {
+    throw new Error(`Google Authentication error: ${error}`);
+  }
 }
