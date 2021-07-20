@@ -25,7 +25,7 @@
    
         initData: {
             users: async () => {
-            const Data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/products?token=${App.variables.TOKEN}`);
+            const Data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/products`);
             
             let id = 0;
                 Data.productos.forEach(product => {
