@@ -1,29 +1,50 @@
 (() => {
     const App = {
-        htmlElements: {
-            PAYPAL_CLIENT_ID: 'AQdaLHiSd29XDLf4kEtrH9-zcQCmOGemOql-OZT-wX1c3eyym7B73YGEuXUWvS3P9cQWy85I8-vX0PI4',
-            PAYPAL_SECRET: 'EGmw76UYvcylWLlRBKrfb5BqSHG2JLfaO0buk7uX4VYXVwDl-2t34XyHywUfNejzQMIokIcvCL3nWHJK',
-            PAYPAL_API: 'https://api-m.sandbox.paypal.com'
+        variables: {
+            BACKEND_URL: 'http://localhost:3000'
         },
-        init: () => {},
+        htmlElements: {
+        },
+        init: () => {
+            App.events.initPaypalButton();
+        },
+        bindEvents: () => {
+        },
         events: {
-            sendPayment: async() => {
-                const body = {
-                    intent: 'CAPTURE',
-                    purchase_units: [{
-                        amount: {
-                          currency_code: 'USD',
-                          value: '100.00'
-                        }
-                    }],
-                    application_context: {
-                        brand_name: 'DSIX Store',
-                        landing_page: 'NO_PREFERENCE',
-                        ser_action: 'PAY_NOW',
-                        return_url: `http://localhost:8080/execute-payment`, // Url despues de realizar el pago
-                        cancel_url: `http://localhost:8080/cancel-payment` // Url despues de realizar el pago
+            initPaypalButton: () => {
+                paypal.Buttons({
+                    style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'paypal' },
+                    createOrder: async(data, actions) => {
+                        const producto = await App.utils.getProduct(`${App.variables.BACKEND_URL}/api/store/product/60e909b831a3a738287049f9`)
+                        console.log(producto.producto.unitPrice);
+                        return await actions.order.create({
+                            purchase_units: [{
+                              "amount": {
+                                  "currency_code" : "USD", "value" : producto.producto.unitPrice
+                                }
+                            }],
+                            application_context: {
+                                brand_name: 'DSIX Store',
+                                landing_page: 'NO_PREFERENCE',
+                                ser_action: 'PAY_NOW',
+                            }
+                        });
+                    },
+                    onApprove: (data, actions) => {
+                        return actions.order.capture().then(function(details) {
+                          console.log(details);
+                          // alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                        });
+                    },
+                    onError: (err) => {
+                        console.log(err);
                     }
-                };
+                }).render('#paypal-button-container');
+            }
+        }, utils: {
+            getProduct: async(url) => {
+                const response = await fetch(url);
+                return response.json();
             }
         }
     }

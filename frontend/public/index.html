@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/header.css">
   <meta name="google-signin-client_id" content="813669874912-fvred2ts4ap6jfp57m3ooqba4e9vgkcb.apps.googleusercontent.com">
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
   <title>E-Shop - DSIX</title>
 </head>
 
@@ -38,7 +39,13 @@
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
         Perferendis nihil dolor ea sapiente iste nulla quod
         iusto! Ab suscipit quia ipsam excepturi dolorem quo tenetur. Consequuntur nam sint animi. A?</p>
-        <button type="button">Order now</button>
+        <!-- BOTÓN PAYPAL -->
+        <div id="smart-button-container">
+          <div style="text-align: center;">
+            <div id="paypal-button-container"></div>
+          </div>
+        </div>
+        
     </div>
     <div class="col">
       <h1></h1>
@@ -56,6 +63,6 @@
   <!-- end header inner -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="./js/login.js"></script>
-
+  <script src="./js/paypal.js"></script>
 </body>
 </html>
