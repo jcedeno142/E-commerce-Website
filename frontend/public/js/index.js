@@ -31,7 +31,7 @@
                         <div class="card-body" id="${id}">
                             <h5 class="card-title">${productName}</h5>
                             <p class="card-text">${description}</p>
-                            <a href="#" id="details-${id}" class="card-link">Ver detalles</a>
+                            <a href="/producto?product=${id}" id="details-${id}" class="card-link">Ver detalles</a>
                             <a href="#" id="cart-${id}" class="card-link">Agregar al carrito</a>
                         </div>
                     </div>`

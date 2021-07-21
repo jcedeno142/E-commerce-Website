@@ -1,8 +1,14 @@
 const express = require('express');
+const path = require('path');
+const views = path.join(__dirname, '../public')
 const app = express();
 
 app.get('/', (req,res) => {
-    res.sendFile('index.html');
+    res.sendFile('index.html', { root: views });
+});
+
+app.get('/producto', (req,res) => {
+    res.sendFile('/producto.html',  { root: views });
 });
 
 module.exports = app;
