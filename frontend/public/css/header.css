@@ -3,9 +3,14 @@
 header {
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
     width: 100%;
     height: 35%;
     background-color: #f1f1f1;
+}
+
+.small-header {
+    height: auto;
 }
 
 .title-container {

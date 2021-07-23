@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="813669874912-fvred2ts4ap6jfp57m3ooqba4e9vgkcb.apps.googleusercontent.com">
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/footer.css">
     <title>DSIX - Detalles</title>
 </head>
 <body>
-    <h3>Detalles</h3>
-    <hr>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim atque iste iure omnis nihil blanditiis porro dignissimos repudiandae commodi unde, maiores quos excepturi quia minima obcaecati assumenda quo ea amet?</p>
+    <header class="small-header">
+        <div class="title-container">
+            <span class="logo">CellShop <img class="svg-logo" src="./images/svg/phone.svg" alt="Cellphone"></span>
+            <div class="google-container">
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="#" id="a-logout">Sign out</a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="main-container">
+
+        </div>
+        <div class="paypal-container">
+            <!-- BOTÓN PAYPAL -->
+            <div id="smart-button-container">
+                <div style="text-align: center;">
+                    <div id="paypal-button-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="footer">
+        <p>E-Commerse proyecto final DSXI 2021</p>
+    </div>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/paypal.js"></script>
     <script src="../js/producto.js"></script>
 </body>
 </html>
