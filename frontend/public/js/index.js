@@ -32,9 +32,9 @@
                             <h5 class="card-title">${productName}</h5>
                             <p class="card-text">${description}</p>
                             <a href="/producto?product=${id}" id="details-${id}" class="card-link">Ver detalles</a>
-                            <a href="#" id="cart-${id}" class="card-link">Agregar al carrito</a>
                         </div>
                     </div>`
+                    // <a href="#" id="cart-${id}" class="card-link">Agregar al carrito</a>
             },
             addToCart: async (event) => {
                 event.preventDefault();

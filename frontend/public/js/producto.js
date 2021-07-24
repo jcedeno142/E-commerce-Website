@@ -7,6 +7,7 @@
             TOKEN: localStorage.getItem('token')
         },
         htmlElements: {
+            info: document.getElementById('info'), // TEXTO TEMPORTAL QUE CONTIENE TODA LA INFO DEL PRODUCTO
             formCart: document.getElementById('form-cart')
         },
         init: () => {
@@ -25,16 +26,17 @@
             product: async() => {
                 const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/product/` ,App.variables.idproduct);
                 App.variables.product = data.producto;
+                App.htmlElements.info.innerHTML += JSON.stringify(App.variables.product); // COLOCAR LOS ELEMENTOS DEL PRODUCTO EN EL HTML AQUÍ
             }
         },
         events: {
             addToCart: async(event) => {
                 event.preventDefault();
                 const product = { item: App.variables.idproduct }
+                if (App.variables.TOKEN === null) App.variables.TOKEN = localStorage.getItem('token');
                 const cart = await Cart.postToCart(`${App.variables.BACKEND_URL}/api/store/cart?token=${App.variables.TOKEN}`, product);
                 const response = cart;
-                console.log(response);
-                //Aquí hay un bug de lógica, si no se ha iniciado sesión antes de ingresar a los detalles, no carga el token.
+                console.log(response); // MENSAJE DE AÑADIDO AL CARRITO
             }
         },
         utils: {
