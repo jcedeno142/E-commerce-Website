@@ -25,7 +25,6 @@
             product: async() => {
                 const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/product/` ,App.variables.idproduct);
                 App.variables.product = data.producto;
-                // console.log(App.variables.product);
             }
         },
         events: {
@@ -35,6 +34,7 @@
                 const cart = await Cart.postToCart(`${App.variables.BACKEND_URL}/api/store/cart?token=${App.variables.TOKEN}`, product);
                 const response = cart;
                 console.log(response);
+                //Aquí hay un bug de lógica, si no se ha iniciado sesión antes de ingresar a los detalles, no carga el token.
             }
         },
         utils: {
