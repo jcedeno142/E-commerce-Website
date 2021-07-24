@@ -5,10 +5,30 @@ section {
 }
 
 .main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50%;
     height: 100%;
     /* background-color: cornflowerblue; */
 }
+
+.btn-cart {
+    background: none;
+    cursor: pointer;
+    border: none;
+    width: 2.4rem;
+}.btn-cart:hover {
+    width: 2.6rem;
+}
+
+.img-cart {
+    width: 2.4rem;
+}.img-cart:hover {
+   width: 2.5rem;
+}
+
+/* LADO DERECHO  */
 
 .paypal-container {
     display: flex;
