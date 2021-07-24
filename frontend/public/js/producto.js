@@ -26,6 +26,7 @@
             product: async() => {
                 const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/product/` ,App.variables.idproduct);
                 App.variables.product = data.producto;
+                Paypal.initializeData.initPaypalButton(App.variables.product);
                 App.htmlElements.info.innerHTML += JSON.stringify(App.variables.product); // COLOCAR LOS ELEMENTOS DEL PRODUCTO EN EL HTML AQUÍ
             }
         },
