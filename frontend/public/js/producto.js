@@ -35,7 +35,7 @@
                 event.preventDefault();
                 const product = { item: App.variables.idproduct }
                 if (App.variables.TOKEN === null) App.variables.TOKEN = localStorage.getItem('token');
-                const cart = await Cart.postToCart(`${App.variables.BACKEND_URL}/api/store/cart?token=${App.variables.TOKEN}`, product);
+                const cart = await App.utils.postData(`${App.variables.BACKEND_URL}/api/store/cart?token=${App.variables.TOKEN}`, product);
                 const response = cart;
                 console.log(response); // MENSAJE DE AÑADIDO AL CARRITO
             }
@@ -48,6 +48,15 @@
                 } catch (error) {
                     throw new Error(`Error: ${error}`);
                 }
+            },
+            postData: async(url, data = {}) => {
+                const response = await fetch(url, {
+                    method: "POST", mode: "cors", cache: "no-cache", credentials: "same-origin", 
+                    headers: {
+                      "Content-Type": "application/json"
+                    }, redirect: "follow", referrerPolicy: "no-referrer", body: JSON.stringify(data)
+                });
+                return response.json();
             }
         }
     }

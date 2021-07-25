@@ -5,9 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Carrito - DSIX Shop</title>
+    <meta name="google-signin-client_id" content="813669874912-fvred2ts4ap6jfp57m3ooqba4e9vgkcb.apps.googleusercontent.com">
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
-    <div id="cart-container"></div>
+    <header class="small-header">
+        <div class="title-container">
+            <span>Shopping cart</span>
+            <div class="google-container">
+                <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+                <a href="#" id="a-logout">Sign out</a>
+                <!-- <a href="/cart"><img src="./images/svg/cart.svg" alt="CART"></a> -->
+                <a href=""><img src="./images/svg/wallet2.svg" alt="PEDIDOS"></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div id="product-container" class="product-container">
+            <!-- PRODUCTOS EN EL CARRITO AQUÍ -->
+        </div>
+        <div class="total-container">
+            TOTAL
+        </div>
+    </div>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="./js/paypal.js"></script>
     <script src="./js/cart.js"></script>
 </body>
 </html>
