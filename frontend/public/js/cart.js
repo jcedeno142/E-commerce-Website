@@ -7,34 +7,45 @@
             TOKEN: localStorage.getItem('token')
         },
         htmlElements: {
-            productContainer: document.getElementById('product-container')
+            productContainer: document.getElementById('product-container'),
+            btnCheckout: document.getElementById('btn-checkout'),
+            totalContainer: document.getElementById('total')
         },
         init: () => {
             App.initializeData.cart();
             App.bindEvents();
         },
         bindEvents: () => {
-            if (App.htmlElements.productContainer != null) App.htmlElements.productContainer.addEventListener('click', App.events.OnRemoveCart)
+            if (App.htmlElements.productContainer != null) {
+                App.htmlElements.productContainer.addEventListener('click', App.events.OnRemoveCart)
+                App.htmlElements.btnCheckout.addEventListener('click', App.events.initPaypal)
+            } 
         },
         initializeData: {
             cart: async() => {
                 const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/cart?token=${App.variables.TOKEN}`);
                 App.variables.cart = data.cart;
-                // console.log(App.variables.cart)
                 App.htmlElements.productContainer.innerHTML = '';
                 if (App.htmlElements.productContainer != null) {
                     App.variables.total = 0;
                     App.variables.cart.forEach(product => {
+                        console.log(product)
                         App.events.getCart(product);
                         App.variables.total += product.item.unitPrice;
-                    });
+                    });  
                 }
-                console.log(App.variables.total)
+                App.htmlElements.totalContainer.innerHTML = App.variables.total;
             }
         },
         events: {
             redirect: () => {
                 if (App.variables.TOKEN === null) window.location.href = 'http://localhost:8080';
+            },
+            initPaypal: () => {
+                console.log(App.htmlElements.totalContainer.textContent)
+                const initPaypal = {unitPrice: Number(App.htmlElements.totalContainer.textContent)}
+                // Crear un componente checkout
+                // Paypal.initializeData.initPaypalButton(initPaypal);
             },
             getCart: ( {email, id, item, name, picture} ) => {
                 App.htmlElements.productContainer.innerHTML += 

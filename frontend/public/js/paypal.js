@@ -5,6 +5,7 @@ const Paypal = {
     },
     initializeData: {
         initPaypalButton: (product) => {
+            console.log(product);
             paypal.Buttons({
                 style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'paypal' },
                 createOrder: async(data, actions) => {
