@@ -5,6 +5,7 @@
         const App ={
         htmlElements: {
             ListaProductos: document.getElementById('div_producto'),
+            modalBody: document.getElementById('modal_body'),
             modal: document.getElementById("myModal"),
             span: document.getElementsByClassName("close")[0],
         },
@@ -39,7 +40,9 @@
         events: {
             onCardClick: (event) => {
             App.htmlElements.modal.style.display="block";
-            console.log(event.target.parentNode.getAttribute('id'));
+            let id = event.target.parentNode.getAttribute('id');
+            App.utils.getProduct(id);
+
             },
 
             onCloseClick: (event) => {
@@ -105,8 +108,41 @@
                 });
             return response.json();
         },
+
+        getProduct: async (_id) => {
+            const Data = await App.utils.getData('http://localhost:3000/api/store/product/'+_id);
+            console.log(Data.producto);
+            App.utils.viewProduct(Data.producto);
+  
+        },
+
+        viewProduct: async ({status, productName,productBrand, unitPrice,description,img}) => {
+            
+            let texto = `<div class="modal-productImage">
+                            <img src="${img}" class="img-modal" >
+                        </div>
+                         <div class="modal-productBrand">
+                            <label>${productBrand}</label>
+                        </div>
+                        <div class="modal-productName">
+                            <label>${productName}</label>
+                        </div>
+                        <div class="modal-productDescription">
+                            <label>${description} </label>
+                        </div>
+                        <div class="modal-productPrice">
+                            <label>${unitPrice}</label>
+                        </div>
+                        <div class="modal-addToCartButton">
+                            <button  class="btn-modal"> Agregar al carrito </button>
+                        </div>`
+
+                        App.htmlElements.modalBody.innerHTML = "";
+                        App.htmlElements.modalBody.innerHTML += texto; 
+                        
+        },
    
-        addProduct: ({status, productName, unitPrice,description,img},id, _id) =>{
+        addProduct: ({status, productName,productBrand, unitPrice,description,img},id, _id) =>{
             
             if (img===""){
                 img = "images/products/noimage.jpg";

@@ -67,8 +67,13 @@ ul {
   }
 
   img{
-      width: 100%;
+      max-width: 100%;
       border-radius: 12px;
+  }
+
+  .img-modal{
+    max-height: 600px;
+    max-width:100%;
   }
   
   div.card_text {
@@ -99,18 +104,128 @@ ul {
 
   /* The Modal (background) */
   .modal {
+    
     display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+    position: fixed; /*Stay in place*/
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 3%; /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
+    width:100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+   
   }
+
+  .modal-body {
+    display: grid;
+    grid-template-columns: 1.2fr 1.1fr;
+    grid-template-rows: 0.5fr 0.5fr 2.4fr 0.8fr 0.8fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "modal-image modal-brand"
+      "modal-image modal-productName"
+      "modal-image modal-description"
+      "modal-image modal-price"
+      "modal-image modal-button";
+    width: 100%;
+    height: 71.4%;
+    /* border: solid 2px rgb(255, 0, 0); */
+  }
+  
+  .modal-productImage { 
+    grid-area: modal-image;
+    /* border: solid 2px rgb(0, 0, 0); */
+  }
+  
+  .modal-productBrand { 
+    font-family:"century gothic";
+    font-size: large;
+    grid-area: modal-brand;
+    /* border: solid 2px black; */
+    display:flex;
+    /* justify-content: center; */
+    align-items:flex-end; 
+    padding-right: 10%;
+    padding-left: 1%;
+  }
+  
+  .modal-productName { 
+    font-family:"century gothic";
+    font-size: xx-large;
+    font-weight: bold;
+    grid-area: modal-productName;
+    /* border: solid 2px black;  */
+    display:flex;
+    /* justify-content: center; */
+    align-items: center; 
+    padding-right: 10%;
+    padding-left: 1%;
+  }
+  
+  .modal-productDescription { 
+    font-family:"century gothic";
+    font-size:16pt;
+    grid-area: modal-description;
+    /* border: solid 2px black; */
+    display:flex; 
+    text-align: justify;
+    padding-right: 10%;
+    padding-left: 1%;
+    padding-top: 2%;
+  }
+  
+  .modal-productPrice { 
+    font-family:"georgia";
+    font-size: 26pt;
+    font-weight: bold;
+    grid-area: modal-price;
+    /* border: solid 2px black; */
+    display:flex;
+    align-items: baseline; 
+    justify-content: center;
+    padding-right: 10%;
+    padding-left: 1%;
+  }
+  
+  .modal-addToCartButton { 
+    grid-area: modal-button;
+    /* border: solid 2px rgb(158, 156, 156);  */
+    display:flex;
+    align-items:baseline; 
+    justify-content: center;
+    padding-right: 10%;
+    padding-left: 1%;
+  }
+
+  .btn-modal {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+
+  .btn-modal:hover {background-color: #3e8e41}
+
+  .btn-modal:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  }
+  
+
   
   /* Modal Content */
   .modal-content {
@@ -119,7 +234,7 @@ ul {
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 70%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -159,7 +274,8 @@ ul {
     color: white;
   }
   
-  .modal-body {padding: 2px 16px;}
+  
+
   
   .modal-footer {
     padding: 2px 16px;
