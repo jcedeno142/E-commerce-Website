@@ -1,20 +1,8 @@
 const { Schema, model } = require('mongoose');
 
 const CartSchema = Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    picture: {
-        type: String
-    },
-    email: {
-        type: String,
-        required: true,
-    },
     item: {
-        type: Schema.Types.ObjectId, ref: 'Producto',
-        required: true
+        type: Schema.Types.ObjectId, ref: 'Producto'
     }
 });
 
@@ -24,4 +12,4 @@ CartSchema.method('toJSON', function() {
     return object;
 });
 
-module.exports = model('Cart', CartSchema);
+module.exports = model('Cart', CartSchema)
