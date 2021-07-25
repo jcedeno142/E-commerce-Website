@@ -27,7 +27,7 @@
             getProducts: ({ description, id, img, productName, status, unitPrice}) => {
                 App.htmlElements.productsContainer.innerHTML += 
                     `<div class="card" style="width: 18rem;">
-                        <img src="/images/banner_01.png" class="card-img-top" alt="CELL">
+                        <img src="${img}" class="card-img-top" alt="CELL">
                         <div class="card-body" id="${id}">
                             <h5 class="card-title">${productName}</h5>
                             <p class="card-text">${description}</p>
