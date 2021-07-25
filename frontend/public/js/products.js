@@ -1,8 +1,11 @@
 // const { events } = require("../../../backend/models/Producto");
 
-    (() => {
-
-        const App ={
+(() => {
+    const App ={
+        variables: {
+            BACKEND_URL: 'http://localhost:3000',
+            TOKEN: localStorage.getItem('token')
+        },
         htmlElements: {
             ListaProductos: document.getElementById('div_producto'),
             modalBody: document.getElementById('modal_body'),
@@ -23,7 +26,7 @@
    
         initData: {
             users: async () => {
-            const Data = await App.utils.getData('http://localhost:3000/api/store/products');
+            const Data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/products`);
             
             let id = 0;
                 Data.productos.forEach(product => {
@@ -53,10 +56,7 @@
                 if (event.target == App.htmlElements.modal) {
                     App.htmlElements.modal.style.display = "none";
                   }
-            },
-
-            
-
+            }
         },
    
         utils: {
@@ -149,18 +149,18 @@
             }
    
             let texto = `<div class="card_img" >
-                        <img src="${img}" style="width:100%" >
-                        <div class="card_text" id="${id}">
-                        <p name="nombre" >${productName}</p>
-                        <p name="precio" >${unitPrice}</p>
-                        <button class="add_btn" id="myBtn"> Ver detalles </button>
-                        </div>
+                            <img src="${img}" style="width:100%" >
+                            <div class="card_text" id="${id}">
+                                <p name="nombre" >${productName}</p>
+                                <p name="precio" >${unitPrice}</p>
+                                <button class="add_btn" id="myBtn"> Ver detalles </button>
+                                <button class="add_btn" id="btn-paypal-${id}"> Comprar </button>
+                            </div>
                         </div>`
             
-            App.htmlElements.ListaProductos.innerHTML += texto;           
+            App.htmlElements.ListaProductos.innerHTML += texto;   
             
         },
-
         setListener:()=>{
             const btn1 = document.querySelectorAll(".add_btn");
             btn1.forEach(boton =>{
