@@ -11,4 +11,8 @@ app.get('/producto', (req,res) => {
     res.sendFile('/producto.html',  { root: views });
 });
 
+app.get('/cart', (req,res) => {
+    res.sendFile('/cart.html',  { root: views });
+});
+
 module.exports = app;

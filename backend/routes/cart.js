@@ -6,7 +6,7 @@ const { valResults } = require('../middlewares/validator-results');
 const express = require('express');
 const app = express();
 
-app.post('/api/store/cart/user', [ verifyToken, Carrito.getCart ]);
+app.get('/api/store/cart', [ verifyToken, Carrito.getCart ]);
 app.post('/api/store/cart', [ verifyToken,
     validators.addCart, valResults, 
     Carrito.addItemToCart ]);

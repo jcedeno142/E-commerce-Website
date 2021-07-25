@@ -3,9 +3,10 @@ const Producto = require('../models/Producto');
 
 const Carrito = {
     getCart: async (req,res) => {
-        const { email } = req.body;
+        const email  = req.user.email;
         try {
-            const cart = await Cart.findOne({email}).populate('item')
+            const cart = await Cart.find({email}).populate('item')
+            console.log(cart)
             return res.status(200).json({ ok: true, cart})
         } catch (error) {
             console.log(error);
