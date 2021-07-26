@@ -25,16 +25,18 @@
             cart: async() => {
                 const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/cart?token=${App.variables.TOKEN}`);
                 App.variables.cart = data.cart;
-                App.htmlElements.productContainer.innerHTML = '';
                 if (App.htmlElements.productContainer != null) {
+                    App.htmlElements.productContainer.innerHTML = '';
                     App.variables.total = 0;
                     App.variables.cart.forEach(product => {
                         console.log(product)
                         App.events.getCart(product);
                         App.variables.total += product.item.unitPrice;
                     });  
+                    App.htmlElements.totalContainer.innerHTML = App.variables.total;
                 }
-                App.htmlElements.totalContainer.innerHTML = App.variables.total;
+                // const initPaypal = {unitPrice: Number(App.htmlElements.totalContainer.textContent)}
+                // Paypal.initializeData.initPaypalButton(initPaypal);
             }
         },
         events: {
