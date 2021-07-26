@@ -8,16 +8,6 @@ const Paypal = {
     },
     initializeData: {
         initPaypalButton: (products) => {
-            let totalPrice = 0;
-            let prices = 0;
-            if (products.length > 0) {
-                for (const product of products) {
-                    prices += product.unitPrice;
-                }
-                totalPrice = Math.round(prices * 100) / 100;
-            } else {
-                totalPrice = Math.round(products.unitPrice * 100) / 100;
-            }
             Paypal.htmlElements.paypalContainer.innerHTML = ''
             paypal.Buttons({
                 style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'paypal' },
@@ -25,7 +15,7 @@ const Paypal = {
                     return await actions.order.create({
                         purchase_units: [{
                           "amount": {
-                              "currency_code" : "USD", "value" : totalPrice
+                              "currency_code" : "USD", "value" : Paypal.roundPrice(products)
                             }
                         }],
                         application_context: {
@@ -45,7 +35,20 @@ const Paypal = {
                 }
             }).render(Paypal.htmlElements.paypalContainer);
         }
-    }, events: {
+    },
+    roundPrice: (products) => {
+        let totalPrice = 0;
+        let prices = 0;
+        if (products.length > 0) {
+            for (const product of products) {
+                prices += product.unitPrice;
+            }
+            return totalPrice = Math.round(prices * 100) / 100;
+        } else {
+            return totalPrice = Math.round(products.unitPrice * 100) / 100;
+        }
+    },
+    events: {
         addToHistory: async(details) => {
             const comprobante = { details }
             const pedido = await Paypal.utils.postData(`${Paypal.variables.BACKEND_URL}/api/store/pedidos?token=${Paypal.variables.TOKEN}`, comprobante);

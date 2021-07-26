@@ -24,21 +24,22 @@
                 const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/cart?token=${App.variables.TOKEN}`);
                 App.variables.cart = data.cart;
                 if (App.htmlElements.productContainer != null) {
-                    App.htmlElements.productContainer.innerHTML = '';
-                    App.variables.total = 0;
-                    App.variables.cart.forEach(product => {
-                        App.events.getCart(product);
-                        App.variables.total += product.item.unitPrice ;
-                    }); 
-                    const rounded = Math.round(App.variables.total * 100) / 100
-                    App.htmlElements.totalContainer.innerHTML = rounded;
-                    // const initPaypal = {unitPrice: Number(App.htmlElements.totalContainer.textContent)}
-                    const items = []
-                    App.variables.cart.forEach(element => {
-                        items.push(element.item)
-                    });
-                    Paypal.initializeData.initPaypalButton(items);
+                    Paypal.initializeData.initPaypalButton(App.initializeData.existCar());
                 }
+            },existCar: () => {
+                App.htmlElements.productContainer.innerHTML = '';
+                App.variables.total = 0;
+                App.variables.cart.forEach(product => {
+                    App.events.getCart(product);
+                    App.variables.total += product.item.unitPrice ;
+                }); 
+                const items = []
+                const rounded = Math.round(App.variables.total * 100) / 100
+                App.htmlElements.totalContainer.innerHTML = rounded;
+                App.variables.cart.forEach(element => {
+                    items.push(element.item)
+                });
+                return items;
             }
         },
         events: {
