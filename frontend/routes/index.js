@@ -15,4 +15,8 @@ app.get('/cart', (req,res) => {
     res.sendFile('/cart.html',  { root: views });
 });
 
+app.get('/history', (req,res) => {
+    res.sendFile('/history.html',  { root: views });
+});
+
 module.exports = app;
