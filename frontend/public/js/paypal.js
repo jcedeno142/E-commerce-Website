@@ -3,16 +3,29 @@ const Paypal = {
         BACKEND_URL: 'http://localhost:3000',
         TOKEN: localStorage.getItem('token')
     },
+    htmlElements: {
+        paypalContainer: document.getElementById('paypal-button-container')
+    },
     initializeData: {
-        initPaypalButton: (product) => {
-            console.log(product);
+        initPaypalButton: (products) => {
+            let totalPrice = 0;
+            let prices = 0;
+            if (products.length > 0) {
+                for (const product of products) {
+                    prices += product.unitPrice;
+                }
+                totalPrice = Math.round(prices * 100) / 100;
+            } else {
+                totalPrice = Math.round(products.unitPrice * 100) / 100;
+            }
+            Paypal.htmlElements.paypalContainer.innerHTML = ''
             paypal.Buttons({
                 style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'paypal' },
                 createOrder: async(data, actions) => {
                     return await actions.order.create({
                         purchase_units: [{
                           "amount": {
-                              "currency_code" : "USD", "value" : product.unitPrice
+                              "currency_code" : "USD", "value" : totalPrice
                             }
                         }],
                         application_context: {
@@ -30,7 +43,7 @@ const Paypal = {
                 onError: (err) => {
                     console.log(err);
                 }
-            }).render('#paypal-button-container');
+            }).render(Paypal.htmlElements.paypalContainer);
         }
     }, events: {
         addToHistory: async(details) => {

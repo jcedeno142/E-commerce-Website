@@ -8,7 +8,6 @@
         },
         htmlElements: {
             productContainer: document.getElementById('product-container'),
-            btnCheckout: document.getElementById('btn-checkout'),
             totalContainer: document.getElementById('total')
         },
         init: () => {
@@ -18,7 +17,6 @@
         bindEvents: () => {
             if (App.htmlElements.productContainer != null) {
                 App.htmlElements.productContainer.addEventListener('click', App.events.OnRemoveCart)
-                App.htmlElements.btnCheckout.addEventListener('click', App.events.initPaypal)
             } 
         },
         initializeData: {
@@ -29,26 +27,21 @@
                     App.htmlElements.productContainer.innerHTML = '';
                     App.variables.total = 0;
                     App.variables.cart.forEach(product => {
-                        console.log(product)
                         App.events.getCart(product);
-                        App.variables.total += product.item.unitPrice;
-                    });  
-                    App.htmlElements.totalContainer.innerHTML = App.variables.total;
+                        App.variables.total += product.item.unitPrice ;
+                    }); 
+                    const rounded = Math.round(App.variables.total * 100) / 100
+                    App.htmlElements.totalContainer.innerHTML = rounded;
+                    // const initPaypal = {unitPrice: Number(App.htmlElements.totalContainer.textContent)}
+                    const items = []
+                    App.variables.cart.forEach(element => {
+                        items.push(element.item)
+                    });
+                    Paypal.initializeData.initPaypalButton(items);
                 }
-                // const initPaypal = {unitPrice: Number(App.htmlElements.totalContainer.textContent)}
-                // Paypal.initializeData.initPaypalButton(initPaypal);
             }
         },
         events: {
-            redirect: () => {
-                if (App.variables.TOKEN === null) window.location.href = 'http://localhost:8080';
-            },
-            initPaypal: () => {
-                console.log(App.htmlElements.totalContainer.textContent)
-                const initPaypal = {unitPrice: Number(App.htmlElements.totalContainer.textContent)}
-                // Crear un componente checkout
-                // Paypal.initializeData.initPaypalButton(initPaypal);
-            },
             getCart: ( {email, id, item, name, picture} ) => {
                 App.htmlElements.productContainer.innerHTML += 
                                 `<div class='card'>
