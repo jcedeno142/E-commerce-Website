@@ -31,9 +31,12 @@
                 <div class="card_text" id="${id}">
                 <p name="nombre" >${productName}</p>
                 <p name="precio" >${unitPrice}</p>
-                <button class="add_btn" id="myBtn"> Ver detalles </button>
+                <br>
+                <a href="/producto?product=${id}" id="details-${id}" class="add_btn">Ver detalles</a>
                 </div>
                 </div>`
+
+                // <button class="add_btn" id="myBtn"> Ver detalles </button>
                     // <a href="#" id="cart-${id}" class="card-link">Agregar al carrito</a>
             },
             addToCart: async (event) => {

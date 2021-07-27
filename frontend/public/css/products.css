@@ -27,6 +27,7 @@ body{
   }
 
   div.card_img {
+      padding-bottom: 1%;
     border-radius: 12px;
     max-width: 300px;
     min-width: 300px;
