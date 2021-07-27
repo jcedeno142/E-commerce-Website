@@ -26,14 +26,14 @@
         events: {
             getProducts: ({ description, id, img, productName, status, unitPrice}) => {
                 App.htmlElements.productsContainer.innerHTML += 
-                    `<div class="card" style="width: 18rem;">
-                        <img src="${img}" class="card-img-top" alt="CELL">
-                        <div class="card-body" id="${id}">
-                            <h5 class="card-title">${productName}</h5>
-                            <p class="card-text">${description}</p>
-                            <a href="/producto?product=${id}" id="details-${id}" class="card-link">Ver detalles</a>
-                        </div>
-                    </div>`
+                `<div class="card_img" >
+                <img src="${img}" style="width:100%" >
+                <div class="card_text" id="${id}">
+                <p name="nombre" >${productName}</p>
+                <p name="precio" >${unitPrice}</p>
+                <button class="add_btn" id="myBtn"> Ver detalles </button>
+                </div>
+                </div>`
                     // <a href="#" id="cart-${id}" class="card-link">Agregar al carrito</a>
             },
             addToCart: async (event) => {
