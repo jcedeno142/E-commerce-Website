@@ -15,8 +15,8 @@ app.get('/cart', (req,res) => {
     res.sendFile('/cart.html',  { root: views });
 });
 
-app.get('/history', (req,res) => {
-    res.sendFile('/history.html',  { root: views });
+app.get('/pedidos', (req,res) => {
+    res.sendFile('/pedidos.html',  { root: views });
 });
 
 module.exports = app;
