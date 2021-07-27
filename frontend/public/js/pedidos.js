@@ -10,14 +10,16 @@
             pedidos: async() => {
                 const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/pedidos?token=${App.variables.TOKEN}`);
                 const pedidos = data;
-                console.log(pedidos);
-                // pedidos.forEach(product => {
-                //     App.events.getPedidos(product);
-                // });
+                // console.log(pedidos.pedido);
+                pedidos.pedido.forEach(product => {
+                    App.events.getPedidos(product);
+                });
             }
         },
         events: {
-            getPedidos: () => {}
+            getPedidos: (product) => {
+                console.log(product);
+            }
         },
         utils: {
             getData: async(url) => {
