@@ -1,5 +1,6 @@
 const Paypal = {
     variables: {
+        cart: false,
         BACKEND_URL: 'http://localhost:3000',
         TOKEN: localStorage.getItem('token')
     },
@@ -43,6 +44,7 @@ const Paypal = {
             for (const product of products) {
                 prices += product.unitPrice;
             }
+            Paypal.variables.cart = true;
             return totalPrice = Math.round(prices * 100) / 100;
         } else {
             return totalPrice = Math.round(products.unitPrice * 100) / 100;
@@ -52,17 +54,33 @@ const Paypal = {
         addToHistory: async(details) => {
             const comprobante = { details }
             const pedido = await Paypal.utils.postData(`${Paypal.variables.BACKEND_URL}/api/store/pedidos?token=${Paypal.variables.TOKEN}`, comprobante);
-            const response = pedido;
-            console.log(response);
+            // const response = pedido;
+            console.log(pedido);
+            if (Paypal.variables.cart === true ) Paypal.events.clearCart();
+        },
+        clearCart: async() => {
+            const deleteCart = await Paypal.utils.deleteData(`${Paypal.variables.BACKEND_URL}/api/store/cart/clear?token=${Paypal.variables.TOKEN}`);
+            console.log(deleteCart);
+            // Aquí debería limpiar el cart-container del DOM
         }
     }, utils: {
         postData: async(url, data= {}) => {
-            const response = await fetch(url, {method: "POST", mode: "cors", cache: "no-cache", credentials: "same-origin", 
+            const response = await fetch(url, { method: "POST", mode: "cors", cache: "no-cache", credentials: "same-origin", 
             headers: {
               "Content-Type": "application/json"
             },redirect: "follow", referrerPolicy: "no-referrer", body: JSON.stringify(data)
           });
           return response.json();
-        }
+        },
+        deleteData: async(url) => {
+            try {
+                const response = await fetch(url , {
+                    method: "DELETE"
+                });
+                return response.json();
+            } catch (error) {
+                throw new Error(`Error: ${error}`);
+            }
+        } 
     }
 };

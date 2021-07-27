@@ -10,5 +10,7 @@ app.get('/api/store/cart', [ verifyToken, Carrito.getCart ]);
 app.post('/api/store/cart', [ verifyToken,
     validators.addCart, valResults, 
     Carrito.addItemToCart ]);
-app.delete('/api/store/cart', [Carrito.removeItemFromCart])
+app.delete('/api/store/cart', [ verifyToken, Carrito.removeItemFromCart ]);
+app.delete('/api/store/cart/clear', [ verifyToken, Carrito.clearCart ]);
+
 module.exports = app;
