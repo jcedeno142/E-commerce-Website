@@ -18,7 +18,7 @@
             <div class="google-container">
                 <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
                 <a href="#" id="a-logout">Sign out</a>
-                <a href=""><img src="./images/svg/wallet2.svg" alt="PEDIDOS"></a>
+                <a href="/pedidos"><img src="./images/svg/wallet2.svg" alt="PEDIDOS"></a>
             </div>
         </div>
     </header>
@@ -32,9 +32,6 @@
                 <h3>Total: $ </h3>
                 <h3 id="total"></h3><h3> USD.</h3>
             </div>
-            <div>
-                <button type="button" id="btn-checkout">Proceder con la compra</button>
-            </div>
             <!-- BOTÓN PAYPAL -->
             <div id="smart-button-container">
                 <div style="text-align: center;">
@@ -42,6 +39,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="back-container">
+        <a href="/">Volver a home</a>
     </div>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="./js/paypal.js"></script>

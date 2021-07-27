@@ -14,6 +14,16 @@ section {
     /* background-color: cornflowerblue; */
 }
 
+ .picture__container {
+    width: 90%;
+    padding: 50px;
+  }
+
+  .picture__container img {
+    width: 300px;
+  }
+
+
 .btn-cart {
     background: none;
     cursor: pointer;
