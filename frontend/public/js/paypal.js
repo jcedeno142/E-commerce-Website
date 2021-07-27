@@ -5,7 +5,8 @@ const Paypal = {
         TOKEN: localStorage.getItem('token')
     },
     htmlElements: {
-        paypalContainer: document.getElementById('paypal-button-container')
+        paypalContainer: document.getElementById('paypal-button-container'),
+        productContainer: document.getElementById('product-container')
     },
     initializeData: {
         initPaypalButton: (products) => {
@@ -54,13 +55,15 @@ const Paypal = {
         addToHistory: async(details) => {
             const comprobante = { details }
             const pedido = await Paypal.utils.postData(`${Paypal.variables.BACKEND_URL}/api/store/pedidos?token=${Paypal.variables.TOKEN}`, comprobante);
-            // const response = pedido;
             console.log(pedido);
             if (Paypal.variables.cart === true ) Paypal.events.clearCart();
         },
         clearCart: async() => {
             const deleteCart = await Paypal.utils.deleteData(`${Paypal.variables.BACKEND_URL}/api/store/cart/clear?token=${Paypal.variables.TOKEN}`);
             console.log(deleteCart);
+            if (deleteCart.ok === true) {
+                Paypal.htmlElements.productContainer.innerHTML = '';
+            }
             // Aquí debería limpiar el cart-container del DOM
         }
     }, utils: {
