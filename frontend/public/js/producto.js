@@ -8,7 +8,9 @@
         },
         htmlElements: {
             info: document.getElementById('info'), // TEXTO TEMPORTAL QUE CONTIENE TODA LA INFO DEL PRODUCTO
-            formCart: document.getElementById('form-cart')
+            imagelink: document.getElementById('pic'),
+            formCart: document.getElementById('form-cart'),
+            picture__container: document.querySelector('.picture__container')
         },
         init: () => {
             App.initializeData.params();
@@ -28,6 +30,8 @@
                 App.variables.product = data.producto;
                 Paypal.initializeData.initPaypalButton(App.variables.product);
                 App.htmlElements.info.innerHTML += JSON.stringify(App.variables.product); // COLOCAR LOS ELEMENTOS DEL PRODUCTO EN EL HTML AQUÍ
+                let url = (App.variables.product.img);
+                App.htmlElements.picture__container.innerHTML += `<img src="${url}" id="pic">`
             }
         },
         events: {
