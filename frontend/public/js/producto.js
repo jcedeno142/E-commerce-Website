@@ -40,10 +40,11 @@
                 let price = (App.variables.product.unitPrice);
                 let description = (App.variables.product.description);
                 App.htmlElements.picture__container.innerHTML += 
-                            `<div class:"product-img"><img src="${url}" style="width:300px; height:300px;> 
-                                <a class:"name">${name}</a>
-                                <aclass:"price">${price}</a>
-                                <a class:"description">${description}</a>
+                            `<div class="product-container">
+                                <img src="${url}" style="width:300px; height:300px;> 
+                                <a class="name">${name}</a>
+                                <a class="price">${price}</a>
+                                <a class="description">${description}</a>
                             </div>`;
             },
             addToCart: async(event) => {
