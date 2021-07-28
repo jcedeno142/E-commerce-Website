@@ -25,30 +25,27 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 App.variables.idproduct = urlParams.get('product');
                 App.initializeData.product();
-                App.initializeData.productdiv();
             },
             product: async() => {
                 const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/product/` ,App.variables.idproduct);
                 App.variables.product = data.producto;
+                App.events.displayProduct();
                 Paypal.initializeData.initPaypalButton(App.variables.product);
-             // COLOCAR LOS ELEMENTOS DEL PRODUCTO EN EL HTML AQUÍ
-            },
-            productdiv: async() => {
-                const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/product/` ,App.variables.idproduct);
-                App.variables.product = data.producto;
+            }
+        },
+        events: {
+            displayProduct: () => {
                 let url = (App.variables.product.img);
                 let name = (App.variables.product.productName);
                 let price = (App.variables.product.unitPrice);
                 let description = (App.variables.product.description);
                 App.htmlElements.picture__container.innerHTML += 
-                `<div class:"product-img"><img src="${url}" style="width:300px; height:300px;> 
-                <a class:"name">${name}</a>
-                <aclass:"price">${price}</a>
-                <a class:"description">${description}</a>
-                </div>`;
-            }
-        },
-        events: {
+                            `<div class:"product-img"><img src="${url}" style="width:300px; height:300px;> 
+                                <a class:"name">${name}</a>
+                                <aclass:"price">${price}</a>
+                                <a class:"description">${description}</a>
+                            </div>`;
+            },
             addToCart: async(event) => {
                 event.preventDefault();
                 const product = { item: App.variables.idproduct }

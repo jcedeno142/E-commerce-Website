@@ -4,7 +4,6 @@ const Cart = require('../models/Cart');
 const Pedidos = {
     getPedidos: async (req, res) => {
         const email  = req.user.email;
-        console.log(email)
         try {
             const pedido = await Pedido.find({email})
             return res.status(200).json({ ok: true, pedido})
