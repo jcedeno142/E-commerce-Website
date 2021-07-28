@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-
 header {
     display: flex;
     flex-direction: column;
@@ -16,6 +15,9 @@ header {
 .title-container {
     padding: 1rem;
     display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -33,10 +35,27 @@ header {
     font-family: 'Indie Flower', cursive;
     font-size: 1.8rem;
     font-weight: 400;
-}.svg-logo {
+}
+
+.svg-logo {
     width: 20px;
+    height: 20px;
     margin-bottom: 5px;
 }
+
+.svg-cart {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+
+.svg-wallet {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5px;
+}
+
 
 .description-container {
     display: flex;
