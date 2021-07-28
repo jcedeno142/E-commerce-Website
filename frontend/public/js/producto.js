@@ -41,7 +41,7 @@
                 let description = (App.variables.product.description);
                 App.htmlElements.picture__container.innerHTML += 
                             `<div class="product-container">
-                                <img src="${url}" style="width:300px; height:300px;> 
+                                <img src="${url}"> 
                                 <a class="name">${name}</a>
                                 <a class="price">${price}</a>
                                 <a class="description">${description}</a>
