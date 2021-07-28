@@ -6,38 +6,88 @@ section {
 
 .main-container {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    justify-content: center;
     width: 50%;
     height: 100%;
     /* background-color: cornflowerblue; */
 }
 
- .picture__container {
+.picture__container {
+    display: flex;
     width: 90%;
     padding: 50px;
-  }
+}
 
-  .picture__container img {
-    width: 300px;
+.product-img {
+    flex: 50%;
+    color: brown;
   }
 
 
 .btn-cart {
+    flex: 33.33%;
+    padding: 5px;
     background: none;
     cursor: pointer;
     border: none;
     width: 2.4rem;
-}.btn-cart:hover {
+}
+
+.btn-cart:hover {
     width: 2.6rem;
 }
 
 .img-cart {
+    flex: 33.33%;
+    padding: 5px;
     width: 2.4rem;
-}.img-cart:hover {
-   width: 2.5rem;
 }
+
+.img-cart:hover {
+    width: 2.5rem;
+}
+
+/* cart button */
+.product-details__btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  
+  .product-details__btn a {
+    flex: 0 0 47%;
+    display: inline-block;
+    padding: 1.6rem 3rem;
+    text-align: center;
+    color: var(--black);
+    border: 1px solid var(--black);
+  }
+  
+  .product-details__btn svg {
+    width: 1.9rem;
+    height: 1.9rem;
+    transition: 0.3s;
+  }
+  
+  .product-details__btn .add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  
+  .product-details__btn .add span {
+    margin-right: 1rem;
+  }
+  
+  .product-details__btn .add:hover{
+    background-color: var(--black);
+    color: var(--primaryColor);
+  }
+  
+  .product-details__btn .add:hover svg {
+    fill: var(--primaryColor);
+  }
 
 /* LADO DERECHO  */
 
@@ -52,7 +102,7 @@ section {
 }
 
 #smart-button-container {
-    width: 65%;
+    width: 50%;
     /* background-color: rebeccapurple; */
 }
 

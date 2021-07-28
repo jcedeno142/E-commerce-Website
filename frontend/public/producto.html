@@ -19,12 +19,12 @@
 <body>
     <header class="small-header">
         <div class="title-container">
-            <a href="/"><span class="logo">CellShop <img class="svg-logo" src="./images/svg/phone.svg" alt="Cellphone"></span></a>
+            <a href="/"><span class="logo">CellShop <img class="svg-logo" src="./images/icons/smartphone.png" alt="Cellphone"></span>
             <div class="google-container">
                 <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <a href="#" id="a-logout">Sign out</a>
-                <a href="/cart"><img src="./images/svg/cart.svg" alt="CART"></a>
-                <a href="/pedidos"><img src="./images/svg/wallet2.svg" alt="PEDIDOS"></a>
+                <a href="#" id="a-logout"><img class="svg-logout" src="./images/icons/logout.png" alt="signout"></a>
+                <a href="/cart"><img class="svg-cart" src="./images/icons/shopping-cart.png" alt="CART"></a>
+                <a href="/pedidos"><img class="svg-wallet" src="./images/icons/wallet.png" alt="PEDIDOS"></a>
             </div>
         </div>
     </header>
@@ -37,9 +37,15 @@
                     </div>
                 </div>
                 <h4 id="info"></h4>
+                <div class="product-details__btn">
+                    <a class="add" href="#">
+                        <span>
                 <button class="btn-cart" type="submit">
-                    <img class="img-cart" src="./images/svg/cart-plus.svg" alt="CART">
+                    <img class="img-cart" src="./images/icons/shopping-cart.png" alt="CART">
                 </button>
+            </span>
+                ADD TO CART</a>
+            </div>
             </form>
         </div>
         <div class="paypal-container">

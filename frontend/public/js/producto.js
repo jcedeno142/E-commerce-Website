@@ -2,6 +2,7 @@
     const App = {
         variables: {
             product: null,
+            productdiv: null,
             idproduct: null,
             BACKEND_URL: 'http://localhost:3000',
             TOKEN: localStorage.getItem('token')
@@ -24,14 +25,27 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 App.variables.idproduct = urlParams.get('product');
                 App.initializeData.product();
+                App.initializeData.productdiv();
             },
             product: async() => {
                 const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/product/` ,App.variables.idproduct);
                 App.variables.product = data.producto;
                 Paypal.initializeData.initPaypalButton(App.variables.product);
-                App.htmlElements.info.innerHTML += JSON.stringify(App.variables.product); // COLOCAR LOS ELEMENTOS DEL PRODUCTO EN EL HTML AQUÍ
+             // COLOCAR LOS ELEMENTOS DEL PRODUCTO EN EL HTML AQUÍ
+            },
+            productdiv: async() => {
+                const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/product/` ,App.variables.idproduct);
+                App.variables.product = data.producto;
                 let url = (App.variables.product.img);
-                App.htmlElements.picture__container.innerHTML += `<img src="${url}" id="pic">`
+                let name = (App.variables.product.productName);
+                let price = (App.variables.product.unitPrice);
+                let description = (App.variables.product.description);
+                App.htmlElements.picture__container.innerHTML += 
+                `<div class:"product-img"><img src="${url}" style="width:300px; height:300px;> 
+                <a class:"name">${name}</a>
+                <aclass:"price">${price}</a>
+                <a class:"description">${description}</a>
+                </div>`;
             }
         },
         events: {
