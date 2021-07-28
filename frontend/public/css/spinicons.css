@@ -12,7 +12,7 @@ Facility
   
   .facility__contianer {
     display: grid;
-    transform: translate(10px, 10px);
+    transform: translate(0px, 10px);
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
 
