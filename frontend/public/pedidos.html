@@ -12,39 +12,34 @@
 <body>
     <header class="small-header">
         <div class="title-container">
-            <a href="/"><span class="logo">CellShop <img class="svg-logo" src="./images/svg/phone.svg" alt="Cellphone"></span></a>
+            <!-- <a href="/"><span class="logo">CellShop <img class="svg-logo" src="./images/svg/phone.svg" alt="Cellphone"></span></a> -->
             <div class="google-container">
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <a href="#" id="a-logout">Sign out</a>
+                <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="#" id="a-logout">Sign out</a> -->
                 <a href="/cart"><img src="./images/svg/cart.svg" alt="CART"></a>
-                <a href="/pedidos"><img src="./images/svg/wallet2.svg" alt="PEDIDOS"></a>
+                <a href="/pedidos"><img src="./images/svg/wallet.svg" alt="PEDIDOS"></a>
             </div>
         </div>
     </header>
 
     <section class="table-section">
         <div class="table-container">
-            <table>
+            <table id="the-table">
                 <tr>
-                    <th>Email</th>
-                    <th>Name</th>
-                    <th>Amount</th>
-                    <th>Transaction ID</th>
-                    <th>Status</th>
-                </tr>
-                <tr>
-                    <td>
-                        <img class="img-avatar" src="images/products/noimage.jpg" alt="Avatar">
-                        <h6>abdiel.pinzon@gmail.com</h6> 
-                    </td>
-                    <td>Abdiel Pinzón</td>
-                    <td>$1500.00USD</td>
-                    <td>6L238877RJ4346030</td>
-                    <td>COMPLETED</td>
+                    <th class="text-center th-svg"><img class="svg" src="./images/svg/people.svg" alt="svg">User info</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Amount</th>
+                    <th class="text-center">Transaction ID</th>
+                    <th class="text-center">Purchase date</th>
+                    <th class="text-center th-svg"><img class="svg" src="./images/svg//info-circle.svg" alt="svg">Status</th>
                 </tr>
             </table>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2021 - Proyecto final desarrollo de software IX.</p> 
+    </footer>
 
     <!-- <div>
         <a href="/">Volver a home</a>
