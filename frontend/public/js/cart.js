@@ -24,15 +24,20 @@
                 const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/cart?token=${App.variables.TOKEN}`);
                 App.variables.cart = data.cart;
                 if (App.htmlElements.productContainer != null) {
-                    Paypal.initializeData.initPaypalButton(App.initializeData.existCar());
+                   Paypal.initializeData.initPaypalButton(App.initializeData.existCar());
                 }
-            },existCar: () => {
+            }
+            ,existCar: () => {
+                let cartItems = 0;
                 App.htmlElements.productContainer.innerHTML = '';
                 App.variables.total = 0;
                 App.variables.cart.forEach(product => {
                     App.events.getCart(product);
                     App.variables.total += product.item.unitPrice ;
+                    cartItems += 1;
                 }); 
+                let texto = `Cart (${cartItems} items)`
+                App.htmlElements.productContainer.insertAdjacentHTML( 'afterBegin', texto );
                 const items = []
                 const rounded = Math.round(App.variables.total * 100) / 100
                 App.htmlElements.totalContainer.innerHTML = rounded;
@@ -40,19 +45,33 @@
                     items.push(element.item)
                 });
                 return items;
+                
             }
         },
         events: {
-            getCart: ( {email, id, item, name, picture} ) => {
+            getCart: ( {email, id, item, name, picture}) => {
                 App.htmlElements.productContainer.innerHTML += 
                                 `<div class='card'>
                                     <div class='card-body'>
-                                        <div><a href='/producto?product=${item._id}'>${item.productName}</a></div>
-                                        <div class='card-botones' id='${id}'>
-                                            <button id='btn-remove-${id}' type="button">Remover</button>
+                                        <div class="cart-img-item"> <img class="cart-img" src="${item.img}">
+                                        </div>
+                                        <div class="cart-text-item">
+                                            <a href='/producto?product=${item._id}'>${item.productName}</a>
+                                            <br>
+                                            <a>${item.productBrand}</a>
+                                            <br>
+                                                <div class='card-botones' id='${id}'>
+                                                    <button class="rmv-btn" id='btn-remove-${id}' type="button"> 
+                                                    <a class="waste-bin">&#128465;&#65039;</a> Remover
+                                                    </button>
+                                                </div>
+                                        </div>
+                                        <div class="cart-price-item">
+                                        <a>$${item.unitPrice}</a>
                                         </div>
                                     </div>
                                 </div>`
+                                // <button id='btn-remove-${id}' type="button">Remover</button>
             },
             OnRemoveCart: async(event) => {
                 const idCart = event.target.parentElement.id;
@@ -90,3 +109,4 @@
     }
     App.init();
 })();
+
