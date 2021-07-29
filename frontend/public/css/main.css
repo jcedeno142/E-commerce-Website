@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
+    --background-color: #E6E6E6;
     --main-font-color: #424242;
     --header-background: #f1f1f1;
     --color-purple: #4c1568;
+    --color-purple2: #4c156896;
 }
 
 body, html {
@@ -12,7 +14,7 @@ body, html {
     padding: 0;
     margin: 0;
     height: 100%;
-    background-color:#E6E6E6;
+    background-color:var(--background-color);
     color: var(--main-font-color);
     font-size: .9rem;
 }
