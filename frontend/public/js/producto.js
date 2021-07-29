@@ -42,9 +42,12 @@
                 App.htmlElements.picture__container.innerHTML += 
                             `<div class="product-container">
                                 <img src="${url}"> 
-                                <a class="name">${name}</a>
-                                <a class="price">${price}</a>
-                                <a class="description">${description}</a>
+                                <ul>
+                                <h1>${name}</h1>
+                                <h2>Price: $${price}</h2>
+                                <h3>Phone Description:</h3>
+                                <p>${description}</p>
+                                </ul>
                             </div>`;
             },
             addToCart: async(event) => {
