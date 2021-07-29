@@ -13,19 +13,20 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/Popup.css">
     <title>DSIX - Detalles</title>
 </head>
 
-<body>
+<body > 
     <header class="small-header">
         <div class="title-container">
-            <span class="logo">CellShop <a href="./"><img class="svg-logo" src="./images/icons/smartphone.png"
+            <span class="logo">CellShop <a href="./"><img class="svg-logo" src="./images/icons/smartphones.svg"
                         alt="Cellphone"></a></span>
             <div class="google-container">
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <a href="#" id="a-logout"><img class="svg-logout" src="./images/icons/logout.png" alt="signout"></a>
-                <a href="/cart"><img class="svg-cart" src="./images/icons/shopping-cart.png" alt="CART"></a>
-                <a href="/pedidos"><img class="svg-wallet" src="./images/icons/wallet.png" alt="PEDIDOS"></a>
+                <div id="google-btn" class="g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="#" class="align-header a-logout" id="a-logout">Sign out <img class="svg-logout" src="./images/icons/logout.svg" alt="LOGOUT"></a>
+                <a href="/cart"><img class="svg-cart" src="./images/icons/shopping-cart.svg" alt="CART"></a>
+                <a href="/pedidos"><img class="svg-wallet" src="./images/icons/wallet.svg" alt="PEDIDOS"></a>
             </div>
         </div>
     </header>
@@ -55,8 +56,7 @@
         </div>
     </section>
 
-    
-
+    <div id="body" ></div>
 
     <div class="footer">
         <p>E-Commerse proyecto final DSXI 2021</p>
@@ -66,6 +66,7 @@
     <script src="./js/paypal.js"></script>
     <script src="./js/cart.js"></script>
     <script src="../js/producto.js"></script>
+    <script src="../js/popup.js"></script>
 </body>
 
 </html>

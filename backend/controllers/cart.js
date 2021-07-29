@@ -18,7 +18,7 @@ const Carrito = {
         try {
             const item = await Producto.findById(id);
             const newCart = await Cart.create({name, picture, email, item, new: true});
-            return res.status(200).json({ ok: true, newCart})
+            return res.status(200).json({ ok: true, newCart,message: 'Item added to cart'})
         } catch (error) {
             console.log(error);
             return res.status(500).json({ok: false, error, message: 'Unexpected server error'});
@@ -28,7 +28,7 @@ const Carrito = {
         const id = req.body.id;
         try {
             const remove = await Cart.deleteOne({_id: id});
-            return res.status(200).json({ok:true, remove})
+            return res.status(200).json({ok:true, remove,message: 'Item removed from cart'})
         } catch (error) {
             console.log(error);
             return res.status(500).json({ok: false, error, message: 'Unexpected server error'});

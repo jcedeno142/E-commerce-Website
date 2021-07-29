@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-signin-client_id" content="813669874912-fvred2ts4ap6jfp57m3ooqba4e9vgkcb.apps.googleusercontent.com">
+    <meta name="google-signin-client_id"
+        content="813669874912-fvred2ts4ap6jfp57m3ooqba4e9vgkcb.apps.googleusercontent.com">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/header2.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/pedidos.css">
     <title>DSIX Shop - Pedidos</title>
 </head>
+
 <body>
     <header class="small-header">
         <div class="title-container">
-            <div class="div-logo">
-               <a class="logo" href="/">CellShop</a>
-            </div>
+            <span class="logo">CellShop <a href="./"><img class="svg-logo" src="./images/icons/smartphones.svg"
+                        alt="Cellphone"></a></span>
             <div class="google-container">
                 <div id="google-btn" class="g-signin2" data-onsuccess="onSignIn"></div>
-                <a href="#" class="align-header a-logout" id="a-logout">Sign out <img src="./images/svg/box-arrow-right.svg" alt="LOGOUT"></a>
-                <a href="/cart" class="align-header"><img src="./images/svg/cart.svg" alt="CART"></a>
-                <a href="/pedidos" class="align-header"><img src="./images/svg/wallet.svg" alt="PEDIDOS"></a>
+                <a href="#" class="align-header a-logout" id="a-logout">Sign out <img class="svg-logout"
+                        src="./images/icons/logout.svg" alt="LOGOUT"></a>
+                <a href="/cart"><img class="svg-cart" src="./images/icons/shopping-cart.svg" alt="CART"></a>
+                <a href="/pedidos"><img class="svg-wallet" src="./images/icons/wallet.svg" alt="PEDIDOS"></a>
             </div>
         </div>
     </header>
@@ -29,19 +32,21 @@
         <div class="table-container">
             <table id="the-table">
                 <tr>
-                    <th class="text-center th-svg"><img class="svg" src="./images/svg/people.svg" alt="svg">User info</th>
+                    <th class="text-center th-svg"><img class="svg" src="./images/svg/people.svg" alt="svg">User info
+                    </th>
                     <th class="text-center">Name</th>
                     <th class="text-center">Amount</th>
                     <th class="text-center">Transaction ID</th>
                     <th class="text-center">Purchase date</th>
-                    <th class="text-center th-svg"><img class="svg" src="./images/svg//info-circle.svg" alt="svg">Status</th>
+                    <th class="text-center th-svg"><img class="svg" src="./images/svg//info-circle.svg" alt="svg">Status
+                    </th>
                 </tr>
             </table>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2021 - Proyecto final desarrollo de software IX.</p> 
+        <p>&copy; 2021 - Proyecto final desarrollo de software IX.</p>
     </footer>
 
     <!-- <div>
@@ -51,4 +56,5 @@
     <script src="./js/login.js"></script>
     <script src="./js/pedidos.js"></script>
 </body>
+
 </html>

@@ -45,22 +45,31 @@ header {
 }
 
 .svg-logout {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     padding: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+}
+.a-logout {
+    padding-top: 5px;
+   color: black;
+    text-decoration: none;
+}
+.a-logout img {
+    margin-left: 3px;
+    top: 20px;
 }
 
 .svg-cart {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     padding: 5px;
     margin-bottom: 5px;
 }
 
 .svg-wallet {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     padding: 5px;
     margin-bottom: 5px;
 }
