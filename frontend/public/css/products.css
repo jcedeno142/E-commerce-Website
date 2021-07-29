@@ -78,7 +78,7 @@ body{
   /* Termina CSS Cards */
 
   /* Inicia CSS Modal */
-  body {font-family: Arial, Helvetica, sans-serif;}
+  /* body {font-family: Arial, Helvetica, sans-serif;} */
 
   /* The Modal (background) */
   .modal {
@@ -121,7 +121,7 @@ body{
   }
   
   .modal-productBrand { 
-    font-family:"century gothic";
+    /* font-family:"century gothic"; */
     font-size: large;
     grid-area: modal-brand;
     /* border: solid 2px black; */
@@ -133,7 +133,7 @@ body{
   }
   
   .modal-productName { 
-    font-family:"century gothic";
+    /* font-family:"century gothic"; */
     font-size: xx-large;
     font-weight: bold;
     grid-area: modal-productName;
@@ -146,7 +146,7 @@ body{
   }
   
   .modal-productDescription { 
-    font-family:"century gothic";
+    /* font-family:"century gothic"; */
     font-size:16pt;
     grid-area: modal-description;
     /* border: solid 2px black; */
@@ -158,7 +158,7 @@ body{
   }
   
   .modal-productPrice { 
-    font-family:"georgia";
+    /* font-family:"georgia"; */
     font-size: 26pt;
     font-weight: bold;
     grid-area: modal-price;

@@ -1,3 +1,4 @@
+
 header {
     display: flex;
     flex-direction: column;
@@ -31,9 +32,9 @@ header {
 }
 
 .logo {
+    /* font-family: 'Acme', sans-serif; */
     font-family: "century gothic";
     font-size: 2rem;
-    font-weight: 400;
     cursor: pointer;
 }
 
@@ -71,11 +72,11 @@ header {
     height: 100%;
 }
 
-.description-container h1 {
+/* .description-container h1 {
      font-family:"century gothic";
-}
+} */
 .description-container p {
-    font-family:"century gothic";
+    /* font-family:"century gothic"; */
     display: block;
 }
 

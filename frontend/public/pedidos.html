@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="813669874912-fvred2ts4ap6jfp57m3ooqba4e9vgkcb.apps.googleusercontent.com">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/header2.css">
     <link rel="stylesheet" href="css/pedidos.css">
     <title>DSIX Shop - Pedidos</title>
 </head>
 <body>
     <header class="small-header">
         <div class="title-container">
-            <!-- <a href="/"><span class="logo">CellShop <img class="svg-logo" src="./images/svg/phone.svg" alt="Cellphone"></span></a> -->
+            <div class="div-logo">
+               <a class="logo" href="/">CellShop</a>
+            </div>
             <div class="google-container">
-                <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <a href="#" id="a-logout">Sign out</a> -->
-                <a href="/cart"><img src="./images/svg/cart.svg" alt="CART"></a>
-                <a href="/pedidos"><img src="./images/svg/wallet.svg" alt="PEDIDOS"></a>
+                <div id="google-btn" class="g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="#" class="align-header a-logout" id="a-logout">Sign out <img src="./images/svg/box-arrow-right.svg" alt="LOGOUT"></a>
+                <a href="/cart" class="align-header"><img src="./images/svg/cart.svg" alt="CART"></a>
+                <a href="/pedidos" class="align-header"><img src="./images/svg/wallet.svg" alt="PEDIDOS"></a>
             </div>
         </div>
     </header>
@@ -44,6 +47,8 @@
     <!-- <div>
         <a href="/">Volver a home</a>
     </div> -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="./js/login.js"></script>
     <script src="./js/pedidos.js"></script>
 </body>
 </html>

@@ -35,7 +35,7 @@
                         <td class='text-date text-center'>${details.create_time}</td>
                         <td><b class='text-center text-status'>${details.status}</b> <img class="svg" src="./images/svg/check.svg" alt="svg"></td>
                     </tr>`;
-                console.log(details);
+                // console.log(details);
             }
         },
         utils: {
