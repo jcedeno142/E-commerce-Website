@@ -3,7 +3,7 @@
 :root {
     --main-font-color: #424242;
     --header-background: #f1f1f1;
-  }
+}
 
 body, html {
     font-family: 'Open Sans', sans-serif;
@@ -14,4 +14,9 @@ body, html {
     background-color:#E6E6E6;
     color: var(--main-font-color);
     font-size: .9rem;
+}
+
+.abcRioButton {
+    box-shadow: none !important;
+    background-color: var(--header-background) !important;
 }
