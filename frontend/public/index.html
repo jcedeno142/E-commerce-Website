@@ -48,24 +48,24 @@
     </section>
 
     <section class="container-products" id="container-products">
-        <!-- AQUÍ VAN LAS TARJETAS DE PRODUCTOS  -->
-        <div class="product-card">
-          <div class="card-container">
-            <img src="./images/products/iphones.png" alt="PHONES">
-            <h3 class="product-card-name">Iphone 69</h3>
-            <div class="star-rating">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
-            <h4>$999.99USD.</h4>
-          </div>
-          <div class="card-details">
-            <a href="/producto?product=${id}" id="details-${id}" class="add_btn">Ver detalles</a>
-          </div>
+      <div class="phone-container">
+        <img class="img-product" src="./images/products/huawei_p30lite.png" alt="phone">
+        <h3 class="product-card-name">Iphone 69</h3>
+        <div class="star-rating">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
         </div>
+        <h4 class="product-price">$999.99USD.</h4>
+        <div class="product-btns">
+          <a href="/producto?product=${id}" id="details-${id}" class="product-btn">Ver detalles</a>
+          <a href="#" id="cart-${id}" class="product-btn">Agregar al carrito</a>
+        </div>
+      </div>
+
+      
     </section>
 
 
