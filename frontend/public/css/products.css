@@ -72,6 +72,11 @@
   border-radius: 5px;
 }
 
+.featured-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 
 
  /* BAINAS DE LAS OTRAS TARJETAS */

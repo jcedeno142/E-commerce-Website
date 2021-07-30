@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-signin-client_id" content="813669874912-fvred2ts4ap6jfp57m3ooqba4e9vgkcb.apps.googleusercontent.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/header2.css">
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -30,15 +31,46 @@
     <section class="section-description">
       <div class="description-left">
         <div class="description-left-text">
-          <h2 class="store-title">Cellphone Shop</h2>
+          <h2 class="store-title"><img src="./images/svg/smartphones.svg" alt="IMG"> Cellphone Shop</h2>
           <p>The place for all your cellphone needs. If you need it, we have it. Don't go looking anywhere else</p>
         </div>
         <div class="featured-container">
-          <!-- hacer unas cards de destacados aquí  -->
+          <div class="phone-container">
+            <img class="img-product" src="./images/products/huawei_p30lite.png" alt="phone">
+            <h3 class="product-card-name">Iphone 69</h3>
+            <div class="star-rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <h4 class="product-price">$999.99USD.</h4>
+            <!-- <div class="product-btns">
+              <a href="/producto?product=${id}" id="details-${id}" class="product-btn">View details</a>
+              <a href="#" id="cart-${id}" class="product-btn">Add to cart</a>
+            </div> -->
+          </div> 
+          <div class="phone-container">
+            <img class="img-product" src="./images/products/huawei_p30lite.png" alt="phone">
+            <h3 class="product-card-name">Iphone 69</h3>
+            <div class="star-rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+            <h4 class="product-price">$999.99USD.</h4>
+            <!-- <div class="product-btns">
+              <a href="/producto?product=${id}" id="details-${id}" class="product-btn">View details</a>
+              <a href="#" id="cart-${id}" class="product-btn">Add to cart</a>
+            </div> -->
+          </div> 
         </div>
       </div>
       <div class="description-right">
-        <img src="./images/main_image.png" alt="PHONE SHOP">
+        <img src="./images/main_image2.png" alt="PHONE SHOP">
       </div>
     </section>
 
@@ -60,61 +92,56 @@
         </div>
         <h4 class="product-price">$999.99USD.</h4>
         <div class="product-btns">
-          <a href="/producto?product=${id}" id="details-${id}" class="product-btn">Ver detalles</a>
-          <a href="#" id="cart-${id}" class="product-btn">Agregar al carrito</a>
+          <a href="/producto?product=${id}" id="details-${id}" class="product-btn">View details</a>
+          <a href="#" id="cart-${id}" class="product-btn">Add to cart</a>
         </div>
-      </div>
-
-      
+      </div> 
     </section>
 
-
-  <!-- <section class="facility__section section" id="facility">
-    <div class="container">
-      <div class="facility__contianer" data-aos="fade-up" data-aos-duration="1200">
-        <div class="facility__box">
-          <div class="facility-img__container">
-            <svg>
-              <use xlink:href="./images/svg/sprite.svg#icon-airplane"></use>
-            </svg>
+    <section class="facility__section section" id="facility">
+      <div class="container">
+        <div class="facility__contianer" data-aos="fade-up" data-aos-duration="1200">
+          <div class="facility__box">
+            <div class="facility-img__container">
+              <svg>
+                <use xlink:href="./images/svg/sprite.svg#icon-airplane"></use>
+              </svg>
+            </div>
+            <p>FREE SHIPPING WORLD WIDE</p>
           </div>
-          <p>FREE SHIPPING WORLD WIDE</p>
-        </div>
 
-        <div class="facility__box">
-          <div class="facility-img__container">
-            <svg>
-              <use xlink:href="./images/svg/sprite.svg#icon-credit-card-alt"></use>
-            </svg>
+          <div class="facility__box">
+            <div class="facility-img__container">
+              <svg>
+                <use xlink:href="./images/svg/sprite.svg#icon-credit-card-alt"></use>
+              </svg>
+            </div>
+            <p>100% MONEY BACK GUARANTEE</p>
           </div>
-          <p>100% MONEY BACK GUARANTEE</p>
-        </div>
 
-        <div class="facility__box">
-          <div class="facility-img__container">
-            <svg>
-              <use xlink:href="./images/svg/sprite.svg#icon-credit-card"></use>
-            </svg>
+          <div class="facility__box">
+            <div class="facility-img__container">
+              <svg>
+                <use xlink:href="./images/svg/sprite.svg#icon-credit-card"></use>
+              </svg>
+            </div>
+            <p>MANY PAYMENT GATWAYS</p>
           </div>
-          <p>MANY PAYMENT GATWAYS</p>
-        </div>
 
-        <div class="facility__box">
-          <div class="facility-img__container">
-            <svg>
-              <use xlink:href="./images/svg/sprite.svg#icon-headphones"></use>
-            </svg>
+          <div class="facility__box">
+            <div class="facility-img__container">
+              <svg>
+                <use xlink:href="./images/svg/sprite.svg#icon-headphones"></use>
+              </svg>
+            </div>
+            <p>24/7 ONLINE SUPPORT</p>
           </div>
-          <p>24/7 ONLINE SUPPORT</p>
         </div>
       </div>
-    </div>
-  </section> -->
+    </section>
 
-  <!-- facility area end -->
-
-    <div class="footer">
-        <p>E-Commerse proyecto final DSXI 2021</p>
+    <div class="footer main-footer">
+      <p>&copy; 2021 - Proyecto final desarrollo de software IX.</p> 
     </div>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="./js/cart.js"></script>

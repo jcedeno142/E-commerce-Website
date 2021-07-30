@@ -26,18 +26,22 @@
         events: {
             getProducts: ({ description, id, img, productName, status, unitPrice}) => {
                 App.htmlElements.productsContainer.innerHTML += 
-                `<div class="card_img" >
-                <img src="${img}" style="width:100%" >
-                <div class="card_text" id="${id}">
-                <p name="nombre" >${productName}</p>
-                <p name="precio" >${unitPrice}</p>
-                <br>
-                <a href="/producto?product=${id}" id="details-${id}" class="add_btn">Ver detalles</a>
-                </div>
-                </div>`
-
-                // <button class="add_btn" id="myBtn"> Ver detalles </button>
-                    // <a href="#" id="cart-${id}" class="card-link">Agregar al carrito</a>
+                        `<div class="phone-container">
+                            <img class="img-product" src="${img}" alt="phone">
+                            <h3 class="product-card-name">${productName}</h3>
+                            <div class="star-rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            </div>
+                            <h4 class="product-price">${unitPrice}.</h4>
+                            <div class="product-btns">
+                            <a href="/producto?product=${id}" id="details-${id}" class="product-btn">View details</a>
+                            <a href="#" id="cart-${id}" class="product-btn">Add to cart</a>
+                            </div>
+                        </div>`;
             },
             addToCart: async (event) => {
                 event.preventDefault();

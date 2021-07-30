@@ -22,9 +22,12 @@
 }
 
 .store-title {
+    display: flex;
     font-size: 1.75rem;
     color: var(--color-purple);
     letter-spacing: 1.5px;
+}.store-title img {
+    width: 1.8rem;
 }
 
 .description-left{

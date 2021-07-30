@@ -49,8 +49,9 @@ header {
 }
 
 .a-logout {
-   
+    font-size: 15px;
     text-decoration: none;
 }.a-logout img {
+    width: 20px;
     margin-left: 3px;
 }
