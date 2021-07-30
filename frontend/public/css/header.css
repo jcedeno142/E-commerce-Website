@@ -1,95 +1,52 @@
+@import './main.css';
 
-header {
+.section-description {
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: var(--header-background);
+}
+
+.description-left, .description-right {
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    width: 100%;
-    height: 85%;
-    background-color: #f1f1f1;
+    justify-content: center;
+    text-align: start;
+    /* background-color: salmon; */
+}.description-left p {
+    text-align: justify;
+    font-size: 1rem;
+    max-width: 50%;
 }
 
-.small-header {
-    height: auto;
-}
-
-.title-container {
-    padding: 1rem;
+.store-title {
     display: flex;
-    padding-left: 5%;
-    padding-right: 5%;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    font-size: 1.75rem;
+    color: var(--color-purple);
+    letter-spacing: 1.5px;
+}.store-title img {
+    width: 1.8rem;
 }
 
-.google-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
-    width: 30%;
-}
-
-.logo {
-    /* font-family: 'Acme', sans-serif; */
-    font-family: "century gothic";
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.svg-logo {
-    width: 50px;
-    height: 50px;
-    margin-bottom: -15px;
-}
-
-.svg-logout {
-    width: 30px;
-    height: 30px;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-.a-logout {
-    padding-top: 5px;
-   color: black;
-    text-decoration: none;
-}
-.a-logout img {
-    margin-left: 3px;
-    top: 20px;
-}
-
-.svg-cart {
-    width: 30px;
-    height: 30px;
-    padding: 5px;
-    margin-bottom: 5px;
-}
-
-.svg-wallet {
-    width: 30px;
-    height: 30px;
-    padding: 5px;
-    margin-bottom: 5px;
-}
-
-.description-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.description-left{
     height: 100%;
+    /* background-color: red; */
+}
+.description-left-text {
+    margin-left: 10%;
+    height: 100%;
+    width: 95%;
+    /* background-color: saddlebrown; */
 }
 
-/* .description-container h1 {
-     font-family:"century gothic";
+.description-right {
+    align-items: flex-end;
+}.description-right img {
+    width: 95%;
+}
+
+/* .featured-container {
+    width: 100%;
 } */
-.description-container p {
-    /* font-family:"century gothic"; */
-    display: block;
-}
-
-.description-right img {
-    width: 250px;
-    height: 350px;
-}

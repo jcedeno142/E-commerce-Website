@@ -1,11 +1,6 @@
 @import './main.css';
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
-.abcRioButton {
-    box-shadow: none !important;
-    background-color: var(--header-background) !important;
-}
-
 header {
     color: var(--main-font-color);
     display: flex;
@@ -54,8 +49,9 @@ header {
 }
 
 .a-logout {
-   
+    font-size: 15px;
     text-decoration: none;
 }.a-logout img {
+    width: 20px;
     margin-left: 3px;
 }
