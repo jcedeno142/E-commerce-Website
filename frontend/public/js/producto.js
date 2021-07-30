@@ -12,7 +12,8 @@
             imagelink: document.getElementById('pic'),
             formCart: document.getElementById('form-cart'),
             picture__container: document.querySelector('.picture__container'),
-            dombody: document.getElementById('body')
+            dombody: document.getElementById('body'),
+            popup: document.getElementById('#popup1')
         },
         init: () => {
             App.initializeData.params();
@@ -57,8 +58,9 @@
                 if (App.variables.TOKEN === null) App.variables.TOKEN = localStorage.getItem('token');
                 const cart = await App.utils.postData(`${App.variables.BACKEND_URL}/api/store/cart?token=${App.variables.TOKEN}`, product);
                 const response = cart;
-                console.log(App.htmlElements.dombody); // MENSAJE DE AÑADIDO AL CARRITO
+                // console.log(App.htmlElements.dombody); // MENSAJE DE AÑADIDO AL CARRITO
                 popup(App.htmlElements.dombody,response.message);
+                
             }
         },
         utils: {
