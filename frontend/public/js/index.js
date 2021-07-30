@@ -18,9 +18,9 @@
             products: async() => {
                 const data = await App.utils.getData(`${App.variables.BACKEND_URL}/api/store/products`);
                 const products = data.productos;
-                // products.forEach(product => {
-                //     App.events.getProducts(product);
-                // });
+                products.forEach(product => {
+                    App.events.getProducts(product);
+                });
             }
         },
         events: {
