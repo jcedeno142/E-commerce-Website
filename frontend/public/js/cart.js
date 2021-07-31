@@ -59,10 +59,10 @@
                                 <img class='img-product' src='${item.img}' alt='Product'>
                             </td>
                             <td class="text-center">${item.productBrand}</td>
-                            <td class="text-center"><a href='/producto?product=${item._id}'>${item.productName}</td>
+                            <td class="text-center td-model"><a href='/producto?product=${item._id}'>${item.productName}</td>
                             <td class="text-center"><b>$${item.unitPrice}USD</b></td>
                             <td id='${id}' class='text-date text-center'>
-                                <button id='btn-remove-${id}'>Remove</button>
+                                <button id='btn-remove-${id}' class='btn-remove'>Remove</button>
                             </td>
                         </tr>`;
 
