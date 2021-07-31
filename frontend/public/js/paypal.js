@@ -14,11 +14,11 @@ const Paypal = {
             Paypal.htmlElements.paypalContainer.innerHTML = ''
             paypal.Buttons({
                 style: { shape: 'pill', color: 'black', layout: 'vertical', label: 'buynow' },
-                createOrder: async(data, actions) => {
+                createOrder: async (data, actions) => {
                     return await actions.order.create({
                         purchase_units: [{
-                          "amount": {
-                              "currency_code" : "USD", "value" : Paypal.roundPrice(products)
+                            "amount": {
+                                "currency_code": "USD", "value": Paypal.roundPrice(products)
                             }
                         }],
                         application_context: {
@@ -29,8 +29,9 @@ const Paypal = {
                     });
                 },
                 onApprove: (data, actions) => {
-                    return actions.order.capture().then(function(details) {
-                      Paypal.events.addToHistory(details);
+                    return actions.order.capture().then(function (details) {
+                        Paypal.events.addToHistory(details);
+                        Paypal(location.href = '#popup2');
                     });
                 },
                 onError: (err) => {
@@ -53,13 +54,13 @@ const Paypal = {
         }
     },
     events: {
-        addToHistory: async(details) => {
+        addToHistory: async (details) => {
             const comprobante = { details }
             const pedido = await Paypal.utils.postData(`${Paypal.variables.BACKEND_URL}/api/store/pedidos?token=${Paypal.variables.TOKEN}`, comprobante);
             console.log(pedido);
-            if (Paypal.variables.cart === true ) Paypal.events.clearCart();
+            if (Paypal.variables.cart === true) Paypal.events.clearCart();
         },
-        clearCart: async() => {
+        clearCart: async () => {
             const deleteCart = await Paypal.utils.deleteData(`${Paypal.variables.BACKEND_URL}/api/store/cart/clear?token=${Paypal.variables.TOKEN}`);
             console.log(deleteCart);
             if (deleteCart.ok === true) {
@@ -69,23 +70,24 @@ const Paypal = {
             // Aquí debería limpiar el cart-container del DOM
         }
     }, utils: {
-        postData: async(url, data= {}) => {
-            const response = await fetch(url, { method: "POST", mode: "cors", cache: "no-cache", credentials: "same-origin", 
-            headers: {
-              "Content-Type": "application/json"
-            },redirect: "follow", referrerPolicy: "no-referrer", body: JSON.stringify(data)
-          });
-          return response.json();
+        postData: async (url, data = {}) => {
+            const response = await fetch(url, {
+                method: "POST", mode: "cors", cache: "no-cache", credentials: "same-origin",
+                headers: {
+                    "Content-Type": "application/json"
+                }, redirect: "follow", referrerPolicy: "no-referrer", body: JSON.stringify(data)
+            });
+            return response.json();
         },
-        deleteData: async(url) => {
+        deleteData: async (url) => {
             try {
-                const response = await fetch(url , {
+                const response = await fetch(url, {
                     method: "DELETE"
                 });
                 return response.json();
             } catch (error) {
                 throw new Error(`Error: ${error}`);
             }
-        } 
+        }
     }
 };
