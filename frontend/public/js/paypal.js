@@ -13,7 +13,7 @@ const Paypal = {
         initPaypalButton: (products) => {
             Paypal.htmlElements.paypalContainer.innerHTML = ''
             paypal.Buttons({
-                style: { shape: 'pill', color: 'blue', layout: 'vertical', label: 'buynow' },
+                style: { shape: 'pill', color: 'black', layout: 'vertical', label: 'buynow' },
                 createOrder: async(data, actions) => {
                     return await actions.order.create({
                         purchase_units: [{
