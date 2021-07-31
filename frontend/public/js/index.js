@@ -36,7 +36,7 @@
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
                             </div>
-                            <h4 class="product-price">${unitPrice}.</h4>
+                            <h4 class="product-price">$${unitPrice}USD.</h4>
                             <div class="product-btns">
                             <a href="/producto?product=${id}" id="details-${id}" class="product-btn">View details</a>
                             </div>
