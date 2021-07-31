@@ -1,8 +1,7 @@
-@import url(//db.onlinewebfonts.com/c/c37866dc4e5d100de07962e50fae91b9?family=Biome);
+
 section {
     display: flex;
     height: 88%;
-    font-family: "Biome";
     /* background-color: crimson; */
 }
 
@@ -26,9 +25,7 @@ section {
     height: 100%;
     display: flex;
     flex-direction: row;
-    border: 5px outset;
     padding-right: 10px;
-    background-color: rgb(159, 172, 172);
 }
 
 .ul{
@@ -60,7 +57,7 @@ section {
     padding-bottom: 1 2 50px;
 }
 .product-container p{
-    font-size: 12px;
+    font-size: 1rem;
     text-align: justify;
     padding-right: 10px;
 }

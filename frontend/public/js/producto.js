@@ -45,8 +45,8 @@
                             `<div class="product-container">
                                 <img src="${url}"> 
                                 <ul>
-                                <h1>${name}</h1>
-                                <h2>Price: $${price}</h2>
+                                <h2>${name}</h1>
+                                <h3>Price: $${price}</h2>
                                 <h3>Phone Description:</h3>
                                 <p>${description}</p>
                                 </ul>

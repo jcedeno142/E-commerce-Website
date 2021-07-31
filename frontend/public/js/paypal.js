@@ -30,6 +30,7 @@ const Paypal = {
                 onApprove: (data, actions) => {
                     return actions.order.capture().then(function(details) {
                       Paypal.events.addToHistory(details);
+                      Paypal.location.href='#popup2'
                     });
                 },
                 onError: (err) => {

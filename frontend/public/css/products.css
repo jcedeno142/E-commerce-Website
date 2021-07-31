@@ -6,7 +6,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}.section-text hr{
+}
+
+.section-text hr {
   width: 5%;
   margin: 0;
   border-radius: 30px;
@@ -26,14 +28,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: 30%;
+  padding-top: 5%;
   /* background-color: #ccc; */
-}.img-product {
-  width: 100%;
+}
+
+.img-product, .img-product-popular {
+  width: 30%;
   margin: 0;
   padding: 0;
-  /* background-color: red; */
-}.product-card-name {
+}.img-product-popular {
+ width: 60%;
+}
+
+.product-card-name {
   margin: 0 0 5px 0;
   font-size: 1.4rem;
   color: var(--color-purple2);
@@ -45,26 +53,32 @@
   width: 100%;
   text-align: center;
 }
+
 .checked {
   color: orange;
-} 
+}
 
 .product-btns {
   display: flex;
   width: 50%;
   justify-content: space-between;
   /* background-color: red; */
-}.product-price, .add_btn {
+}
+
+.product-price, .add_btn {
   width: 100%;
   text-align: center;
-}.product-btns a {
+}
+
+.product-btns a {
   font-size: .8rem;
   /* color: var(--main-font-color); */
   text-decoration: none;
-  
   color: #ffffff;
   text-align: center;
-}.product-btn {
+}
+
+.product-btn {
   width: 45%;
   padding: 3px;
   background-color: var(--color-purple2);
@@ -77,9 +91,8 @@
   justify-content: space-evenly;
 }
 
+/* BAINAS DE LAS OTRAS TARJETAS */
 
-
- /* BAINAS DE LAS OTRAS TARJETAS */
 /* .product-card {
   margin-top: 3%;
   width: 20%;
