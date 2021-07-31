@@ -36,7 +36,7 @@
                     App.variables.total += product.item.unitPrice ;
                     cartItems += 1;
                 }); 
-                let texto = `Cart (${cartItems} items)`
+                let texto = `<div class="itemCount">Cart (${cartItems} items) </div>`
                 App.htmlElements.productContainer.insertAdjacentHTML( 'afterBegin', texto );
                 const items = []
                 const rounded = Math.round(App.variables.total * 100) / 100
@@ -51,26 +51,24 @@
         events: {
             getCart: ( {email, id, item, name, picture}) => {
                 App.htmlElements.productContainer.innerHTML += 
-                                `<div class='card'>
-                                    <div class='card-body'>
-                                        <div class="cart-img-item"> <img class="cart-img" src="${item.img}">
-                                        </div>
-                                        <div class="cart-text-item">
-                                            <a href='/producto?product=${item._id}'>${item.productName}</a>
-                                            <br>
-                                            <a>${item.productBrand}</a>
-                                            <br>
-                                                <div class='card-botones' id='${id}'>
-                                                    <button class="rmv-btn" id='btn-remove-${id}' type="button"> 
-                                                    <a class="waste-bin">&#128465;&#65039;</a> Remover
-                                                    </button>
-                                                </div>
-                                        </div>
-                                        <div class="cart-price-item">
-                                        <a>$${item.unitPrice}</a>
-                                        </div>
-                                    </div>
-                                </div>`
+                `<div class="card">
+                    <div class="card-body"></div>
+                        <div class="cart-img-item"><img class="cart-img" src="${item.img}"></div>
+                        <div class="cart-text-item">
+                            <div class="cart-item-name"><a href='/producto?product=${item._id}'>${item.productName}</a></div>
+                            <div class="cart-item-brand"><a>${item.productBrand}</a></div>
+                        </div>
+                    <div class="cart-price-item">
+                        <div class="cart-price"><a>$${item.unitPrice}</a></div>
+                        <div class="cart-btn-delete">
+                            <div class='card-botones' id='${id}'>
+                                <button class="rmv-btn" id='btn-remove-${id}' type="button"> 
+                                    &#10060;
+                                </button>
+                            </div>
+                    </div>
+                </div>
+            </div>`
                                 // <button id='btn-remove-${id}' type="button">Remover</button>
             },
             OnRemoveCart: async(event) => {
