@@ -28,7 +28,6 @@ section {
     flex-direction: row;
     border: 5px outset;
     padding-right: 10px;
-    background-color: rgb(159, 172, 172);
 }
 
 .ul{

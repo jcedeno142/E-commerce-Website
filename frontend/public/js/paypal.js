@@ -30,6 +30,7 @@ const Paypal = {
                 onApprove: (data, actions) => {
                     return actions.order.capture().then(function(details) {
                       Paypal.events.addToHistory(details);
+                      alert("Purchase successful");
                     });
                 },
                 onError: (err) => {
