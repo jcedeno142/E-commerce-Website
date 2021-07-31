@@ -14,8 +14,8 @@
     align-items: center;
     justify-content: center;
     width: 95%;
-    font-family: "biome";
-    background: purple;
+    font-family: "Century Gothic";
+    background: #4c156896;
     color: whitesmoke;
     margin-left: 5%;
     border-radius: 10px;
@@ -128,7 +128,7 @@
   }
   
   .cart-item-name {
-    font-family: "biome";
+    font-family: "Century Gothic";
     font-size: x-large;
     align-self: end; 
     grid-area: cart-item-name;
@@ -136,14 +136,14 @@
   }
   
   .cart-item-brand {
-    font-family: "biome";
+    font-family: "Century Gothic";
     align-self: start;
     grid-area: cart-item-brand;
     transform: translate(-100px);
   }
   
   .cart-price-item {
-    font-family: "biome";
+    font-family: "Century Gothic";
     font-size: x-large;
     display: grid;
     grid-template-columns: 1fr;
