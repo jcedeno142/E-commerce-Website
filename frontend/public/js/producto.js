@@ -12,8 +12,7 @@
             imagelink: document.getElementById('pic'),
             formCart: document.getElementById('form-cart'),
             picture__container: document.querySelector('.picture__container'),
-            dombody: document.getElementById('body'),
-            popup: document.getElementById('#popup1')
+            dombody: document.getElementById('message')
         },
         init: () => {
             App.initializeData.params();
@@ -45,8 +44,8 @@
                             `<div class="product-container">
                                 <img src="${url}"> 
                                 <ul>
-                                <h1>${name}</h1>
-                                <h2>Price: $${price}</h2>
+                                <h2>${name}</h2>
+                                <h3>Price: $${price}</h3>
                                 <h3>Phone Description:</h3>
                                 <p>${description}</p>
                                 </ul>
