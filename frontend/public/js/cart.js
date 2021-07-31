@@ -8,7 +8,7 @@
         },
         htmlElements: {
             productContainer: document.getElementById('product-container'),
-            totalContainer: document.getElementById('total')
+            totalContainer: document.getElementById('total'),
         },
         init: () => {
             App.initializeData.cart();
@@ -29,10 +29,10 @@
             }
             ,existCar: () => {
                 let cartItems = 0;
-                // App.htmlElements.productContainer.innerHTML = '';
+                App.htmlElements.productContainer.innerHTML = '';
                 App.variables.total = 0;
                 App.variables.cart.forEach(product => {
-                    // App.events.getCart(product);
+                    App.events.getCart(product);
                     App.variables.total += product.item.unitPrice ;
                     cartItems += 1;
                 }); 
@@ -51,24 +51,37 @@
         events: {
             getCart: ( {email, id, item, name, picture}) => {
                 App.htmlElements.productContainer.innerHTML += 
-                `<div class="card">
-                    <div class="card-body"></div>
-                        <div class="cart-img-item"><img class="cart-img" src="${item.img}"></div>
-                        <div class="cart-text-item">
-                            <div class="cart-item-name"><a href='/producto?product=${item._id}'>${item.productName}</a></div>
-                            <div class="cart-item-brand"><a>${item.productBrand}</a></div>
-                        </div>
-                    <div class="cart-price-item">
-                        <div class="cart-price"><a>$${item.unitPrice}</a></div>
-                        <div class="cart-btn-delete">
-                            <div class='card-botones' id='${id}'>
-                                <button class="rmv-btn" id='btn-remove-${id}' type="button"> 
-                                    &#10060;
-                                </button>
-                            </div>
-                    </div>
-                </div>
-            </div>`
+                        `<tr>
+                            <td class='td-img'>
+                                <img class='img-product' src='${item.img}' alt='Product'>
+                            </td>
+                            <td class="text-center">${item.productBrand}</td>
+                            <td class="text-center"><a href='/producto?product=${item._id}'>${item.productName}</td>
+                            <td class="text-center"><b>$${item.unitPrice}USD</b></td>
+                            <td id='${id}' class='text-date text-center'>
+                                <button id='btn-remove-${id}'>Remove</button>
+                            </td>
+                        </tr>`;
+
+            //     App.htmlElements.productContainer.innerHTML += 
+            //     `<div class="card">
+            //         <div class="card-body"></div>
+            //             <div class="cart-img-item"><img class="cart-img" src="${item.img}"></div>
+            //             <div class="cart-text-item">
+            //                 <div class="cart-item-name"><a href='/producto?product=${item._id}'>${item.productName}</a></div>
+            //                 <div class="cart-item-brand"><a>${item.productBrand}</a></div>
+            //             </div>
+            //         <div class="cart-price-item">
+            //             <div class="cart-price"><a>$${item.unitPrice}</a></div>
+            //             <div class="cart-btn-delete">
+            //                 <div class='card-botones' id='${id}'>
+            //                     <button class="rmv-btn" id='btn-remove-${id}' type="button"> 
+            //                         &#10060;
+            //                     </button>
+            //                 </div>
+            //         </div>
+            //     </div>
+            // </div>`
                                 // <button id='btn-remove-${id}' type="button">Remover</button>
             },
             OnRemoveCart: async(event) => {
