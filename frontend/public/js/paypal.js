@@ -13,7 +13,7 @@ const Paypal = {
         initPaypalButton: (products) => {
             Paypal.htmlElements.paypalContainer.innerHTML = ''
             paypal.Buttons({
-                style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'paypal' },
+                style: { shape: 'pill', color: 'blue', layout: 'vertical', label: 'buynow' },
                 createOrder: async(data, actions) => {
                     return await actions.order.create({
                         purchase_units: [{
@@ -31,7 +31,6 @@ const Paypal = {
                 onApprove: (data, actions) => {
                     return actions.order.capture().then(function(details) {
                       Paypal.events.addToHistory(details);
-                      Paypal.alertmessage(location.href='#popup2');
                     });
                 },
                 onError: (err) => {
@@ -52,10 +51,6 @@ const Paypal = {
         } else {
             return totalPrice = Math.round(products.unitPrice * 100) / 100;
         }
-    },
-    alertmessage:(domelement,) =>{
-        console.log(domelement);
-        
     },
     events: {
         addToHistory: async(details) => {
