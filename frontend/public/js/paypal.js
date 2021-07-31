@@ -7,6 +7,7 @@ const Paypal = {
     htmlElements: {
         paypalContainer: document.getElementById('paypal-button-container'),
         productContainer: document.getElementById('product-container'),
+        // itemCount: document.getElementById('itemCount'),
         total: document.getElementById('total')
     },
     initializeData: {
@@ -31,7 +32,7 @@ const Paypal = {
                 onApprove: (data, actions) => {
                     return actions.order.capture().then(function (details) {
                         Paypal.events.addToHistory(details);
-                        Paypal(location.href = '#popup2');
+                        location.href = '#popup2';
                     });
                 },
                 onError: (err) => {
@@ -66,8 +67,8 @@ const Paypal = {
             if (deleteCart.ok === true) {
                 Paypal.htmlElements.productContainer.innerHTML = '';
                 Paypal.htmlElements.total.innerHTML = 0;
+                // Paypal.htmlElements.itemCount.innerHTML = 0;
             }
-            // Aquí debería limpiar el cart-container del DOM
         }
     }, utils: {
         postData: async (url, data = {}) => {

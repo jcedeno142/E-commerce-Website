@@ -39,7 +39,7 @@
                     App.variables.total += product.item.unitPrice ;
                     cartItems += 1;
                 }); 
-                let texto = `<div class="itemCount">Cart (${cartItems} items) </div>`
+                let texto = `<div id='itemCount' class="itemCount">Cart (${cartItems} items) </div>`
                 App.htmlElements.cartCounter.insertAdjacentHTML( 'afterBegin', texto );
                 const items = []
                 const rounded = Math.round(App.variables.total * 100) / 100
