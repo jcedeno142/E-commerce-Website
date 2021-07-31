@@ -29,10 +29,10 @@
             }
             ,existCar: () => {
                 let cartItems = 0;
-                App.htmlElements.productContainer.innerHTML = '';
+                // App.htmlElements.productContainer.innerHTML = '';
                 App.variables.total = 0;
                 App.variables.cart.forEach(product => {
-                    App.events.getCart(product);
+                    // App.events.getCart(product);
                     App.variables.total += product.item.unitPrice ;
                     cartItems += 1;
                 }); 
