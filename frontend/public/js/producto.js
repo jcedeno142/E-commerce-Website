@@ -13,7 +13,8 @@
             formCart: document.getElementById('form-cart'),
             picture__container: document.querySelector('.picture__container'),
             dombody: document.getElementById('body'),
-            popup: document.getElementById('#popup1')
+            popup: document.getElementById('popup1'),
+            popup2: document.getElementById('popup2')
         },
         init: () => {
             App.initializeData.params();
@@ -21,6 +22,7 @@
         },
         bindEvents: () => {
             App.htmlElements.formCart.addEventListener('submit', App.events.addToCart)
+            window.addEventListener("click", App.events.onWindowsClick);
         },
         initializeData: {
             params: () => {
@@ -53,6 +55,8 @@
                             </div>`;
             },
             addToCart: async(event) => {
+                App.htmlElements.popup.style.display = "";
+                App.htmlElements.popup.style.transition = "opacity 500ms";
                 event.preventDefault();
                 const product = { item: App.variables.idproduct }
                 if (App.variables.TOKEN === null) App.variables.TOKEN = localStorage.getItem('token');
@@ -61,7 +65,17 @@
                 // console.log(App.htmlElements.dombody); // MENSAJE DE AÑADIDO AL CARRITO
                 popup(App.htmlElements.dombody,response.message);
                 
-            }
+                
+            },
+            onWindowsClick: (event)=>{
+                if (event.target == App.htmlElements.popup ) {
+                    App.htmlElements.popup.style.display = "none";
+                  }
+
+                  if (event.target == App.htmlElements.popup2 ) {
+                    App.htmlElements.popup2.style.display = "none";
+                  }
+            },
         },
         utils: {
             getData: async (url, id) => {
