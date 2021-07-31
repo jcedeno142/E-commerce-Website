@@ -6,7 +6,8 @@ const Paypal = {
     },
     htmlElements: {
         paypalContainer: document.getElementById('paypal-button-container'),
-        productContainer: document.getElementById('product-container')
+        productContainer: document.getElementById('product-container'),
+        total: document.getElementById('total')
     },
     initializeData: {
         initPaypalButton: (products) => {
@@ -68,6 +69,7 @@ const Paypal = {
             console.log(deleteCart);
             if (deleteCart.ok === true) {
                 Paypal.htmlElements.productContainer.innerHTML = '';
+                Paypal.htmlElements.total.innerHTML = 0;
             }
             // Aquí debería limpiar el cart-container del DOM
         }
