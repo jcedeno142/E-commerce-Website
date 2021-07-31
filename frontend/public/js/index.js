@@ -39,7 +39,6 @@
                             <h4 class="product-price">${unitPrice}.</h4>
                             <div class="product-btns">
                             <a href="/producto?product=${id}" id="details-${id}" class="product-btn">View details</a>
-                            <a href="#" id="cart-${id}" class="product-btn">Add to cart</a>
                             </div>
                         </div>`;
             },

@@ -26,13 +26,13 @@
   .facility-img__container {
     position: relative;
     display: inline-block;
-    line-height: 9.5rem;
-    width: 8rem;
-    height: 4rem;
+    line-height: 8rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
-    border: 1.5px solid var(--white);
+    border: 1px solid white;
     z-index: 1;
-    margin-bottom: 1.6rem;
+    margin-bottom: 0rem;
   }
   
   .facility-img__container::before {
@@ -45,7 +45,7 @@
     right: 0;
     bottom: 0;
     margin: 0.7rem;
-    background-color: var(--white);
+    background-color: white;
     z-index: -1;
   }
   
