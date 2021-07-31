@@ -43,13 +43,14 @@
                 let name = (App.variables.product.productName);
                 let price = (App.variables.product.unitPrice);
                 let description = (App.variables.product.description);
+                
                 App.htmlElements.picture__container.innerHTML += 
                             `<div class="product-container">
                                 <img src="${url}"> 
                                 <ul>
-                                <h2>${name}</h1>
-                                <h3>Price: $${price}</h2>
-                                <h3>Phone Description:</h3>
+                                <h2><b class="text-purple">${name}</b></h1>
+                                <p>Price: <b>$${price}USD</b></p>
+                                <h4 class="text-purple">Phone Description:</h4>
                                 <p>${description}</p>
                                 </ul>
                             </div>`;

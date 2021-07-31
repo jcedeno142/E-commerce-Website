@@ -7,17 +7,27 @@ section {
 
 .main-container {
     display: flex;
-    flex-direction: column;
-    width: 50%;
+    /* flex-direction: column; */
+    width: 60%;
     height: 100%;
+    /* background-color: aqua; */
+}
 
+.form {
+    /* background-color: chocolate; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
 }
 
 .picture__container {
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    padding: 50px;
+    /* display: flex; */
+    /* flex-direction: row; */
+    align-self: center;
+    width: 80%;
+    /* padding: 50px; */
+    /* background-color: chartreuse; */
 }
 
 .product-container {
@@ -36,8 +46,8 @@ section {
     
 }
 .product-container img{
-    width:300px; 
-    height: 300px;
+    width:240px; 
+    height: 240px;
 }
 
 .product-container h1{
@@ -62,7 +72,6 @@ section {
     padding-right: 10px;
 }
 
-
 .btn-cart {
     display: flex;
     padding: 5px;
@@ -70,12 +79,10 @@ section {
     cursor: pointer;
     border: none;
     width: 8rem;
-
 }
 
 .btn-cart:hover {
-    width: 12rem;
-    
+    width: 12rem;  
 }
 
 .img-cart {
@@ -84,32 +91,29 @@ section {
     max-width: 2.4rem;
 }
 
-
 /* cart button */
 .product-details__btn {
-    display: flex;
-    flex-direction: row;
-    padding-left: 60px;
-    margin-bottom: 30px;
-
-  }
+    width: 70%;
+    margin-top: 5%;
+    align-self: center;
+    /* background-color: coral; */
+    /* padding-left: 60px; */
+    /* margin-bottom: 30px; */
+}
   
-  .product-details__btn .btn-cart{
+.product-details__btn .btn-cart{
     align-items: center;
     justify-content: center;
     transition: 0.3s;
-  }
+}
 
-  footer {
+footer {
     display: flex;
     height: 4.5%;
     align-items: center;
     justify-content: center;
-  }
+} 
   
-  
-
-
 /* LADO DERECHO  */
 
 .paypal-container {
@@ -117,7 +121,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 40%;
     height: 100%;
     /* background-color: sandybrown; */
 }
@@ -130,4 +134,8 @@ section {
 #paypal-button-container {
     width: 100%;
     /* background-color: royalblue; */
+}
+
+.text-purple {
+    color: var(--color-purple);
 }
