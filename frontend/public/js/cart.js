@@ -8,7 +8,9 @@
         },
         htmlElements: {
             productContainer: document.getElementById('product-container'),
+            cartCounter: document.getElementById('cart-counter'),
             totalContainer: document.getElementById('total'),
+            table: document.getElementById('the-table')
         },
         init: () => {
             App.initializeData.cart();
@@ -29,7 +31,8 @@
             }
             ,existCar: () => {
                 let cartItems = 0;
-                App.htmlElements.productContainer.innerHTML = '';
+                App.htmlElements.table.innerHTML = '';
+                App.htmlElements.cartCounter.innerHTML = '';
                 App.variables.total = 0;
                 App.variables.cart.forEach(product => {
                     App.events.getCart(product);
@@ -37,7 +40,7 @@
                     cartItems += 1;
                 }); 
                 let texto = `<div class="itemCount">Cart (${cartItems} items) </div>`
-                App.htmlElements.productContainer.insertAdjacentHTML( 'afterBegin', texto );
+                App.htmlElements.cartCounter.insertAdjacentHTML( 'afterBegin', texto );
                 const items = []
                 const rounded = Math.round(App.variables.total * 100) / 100
                 App.htmlElements.totalContainer.innerHTML = rounded;
@@ -50,7 +53,7 @@
         },
         events: {
             getCart: ( {email, id, item, name, picture}) => {
-                App.htmlElements.productContainer.innerHTML += 
+                App.htmlElements.table.innerHTML += 
                         `<tr>
                             <td class='td-img'>
                                 <img class='img-product' src='${item.img}' alt='Product'>

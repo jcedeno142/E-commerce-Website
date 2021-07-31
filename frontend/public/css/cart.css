@@ -8,19 +8,24 @@
   height: auto;
 }
 
-.itemCount {
+.cart-counter {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  font-family: "Century Gothic";
+  /* background-color: red; */
+}.itemCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 13%;
   background: #4c156896;
   color: whitesmoke;
   border-radius: 10px;
   margin-top: 1%;
   margin-bottom: 1%;
-  font-size: medium;
-  padding: 1px;
+  /* font-size: medium; */
+  /* padding: 1px; */
 }
 
 .product-container {
