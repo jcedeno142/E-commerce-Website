@@ -1,169 +1,75 @@
 /* cart2 css */
 .main-container {
-    display: flex;
-    justify-content: left;
-    /* align-items: center; */
-    /* background-color: cornflowerblue; */
-    width: 100%;
-    height: 100%;
+  display: flex;
+  justify-content: left;
+  /* align-items: center; */
+  /* background-color: cornflowerblue; */
+  width: 100%;
+  height: 100%;
 }
 
-.itemCount{
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 95%;
-    font-family: "Century Gothic";
-    background: #4c156896;
-    color: whitesmoke;
-    margin-left: 5%;
-    border-radius: 10px;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    font-size: medium;
-    padding: 1px;
-}
-
-.rmv-btn{
-    /* display: flex; */
-    /* margin-top: 5px; */
-    margin-right: -10px;
-
-    background: transparent;
-    border-style: none;
-    transition: 0.2s;
-}
-
-.rmv-btn:hover{
-    transform: scale(1.5);
-    transition: 0.2s;
-}
-
-.cart-img{
-    display: flex;
-    max-width: 50%;
-    max-height: 50%;
+.itemCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  font-family: "Century Gothic";
+  background: #4c156896;
+  color: whitesmoke;
+  margin-left: 5%;
+  border-radius: 10px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: medium;
+  padding: 1px;
 }
 
 .product-container {
-    /* background-color: sienna; */
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* background: whitesmoke; */
-    padding-right: 2%;
+  /* background-color: sienna; */
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: whitesmoke; */
+  padding-right: 2%;
 }
 
 .total-container {
-    width: 50%;
-    /* background-color: slateblue; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    /* position: fixed; */
-    /* min-height: 120px; */
-    /* width: 252px; */
-    /* text-align: center; */
-    /* word-wrap: break-word; */
-    /* margin-left: 51%; */
-    /* margin-top: 20%; */
-    
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .precio-total-container {
-    display: flex;
-    margin-right: 3px;
-
-    
+  display: flex;
+  margin-right: 3px;
 }
 
 .paypal-container {
-    background-color: slateblue;
-    width: 50%;
-  
+  background-color: slateblue;
+  width: 50%;
 }
 
-/* NUEVO CSS CART  */
-.card {
-    display: grid; 
-    grid-template-columns: 0.8fr 0.6fr 0.6fr; 
-    grid-template-rows: min-content; 
-    gap: 0px 0px; 
-    background-color: white;
-    margin-bottom: 1%;
-    margin-left: 5%;
-    border-radius: 10px;
-    transition: 0.35s;
-    
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  .card:hover{
-      transform: scale(1.010);
-      transition: 0.35s;
-  }
-  
-  .card-body { 
-    
-    grid-area: 1 / 1 / 2 / 4; }
-  
-  .cart-img-item {
-    justify-self: center; 
-    align-self: center; 
-      grid-area: 1 / 1 / 2 / 2; }
-  
-  .cart-text-item {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "cart-item-name"
-      "cart-item-brand";
-    grid-area: 1 / 2 / 2 / 3;
-  }
-  
-  .cart-item-name {
-    font-family: "Century Gothic";
-    font-size: x-large;
-    align-self: end; 
-    grid-area: cart-item-name;
-    transform: translate(-100px);
-  }
-  
-  .cart-item-brand {
-    font-family: "Century Gothic";
-    align-self: start;
-    grid-area: cart-item-brand;
-    transform: translate(-100px);
-  }
-  
-  .cart-price-item {
-    font-family: "Century Gothic";
-    font-size: x-large;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "cart-btn-delete"
-      "cart-price";
-    grid-area: 1 / 3 / 2 / 4;
-    margin-bottom: 3%;
-    margin-right: 7%;
-  }
-  
-  .cart-price {
-      justify-self: end; 
-    align-self: end;
-    grid-area: cart-price; }
-  
-  .cart-btn-delete {   
-    justify-self: end; 
-    align-self:auto;
-    grid-area: cart-btn-delete; }
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.th-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
